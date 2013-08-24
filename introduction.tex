@@ -1,0 +1,136 @@
+\chapter{Introduction}
+
+\section{The Sentence Tracker}
+We introduce a framework that integrates natural-language descriptions of
+activities with a detection-based tracking mechanism for activity recognition
+in a provably optimal fashion.
+%
+We intend for the sentences, describing interaction between participant
+objects, to provide high-level top-down guidance to the inherent tracking
+process in the activity recognition framework.
+%
+Given a video and a sentence as its input, it produces as output a score and a
+set of tracks that best represent the provided sentential description.
+%
+By leveraging this framework in different ways, we are able to demonstrate its
+efficacy and elegance in performing three disparate tasks: (a)
+sentential-description based focus of attention, (b) sentential-description
+generation for video, and (c) sentential-query based video retrieval.
+
+\section{Video Retrieval}
+
+We modify and extend the Sentence Tracker’s ability to perform query-based
+video retrieval on a very large corpus of videos using machine-learning
+methods in order to learns models for the query lexicon.
+%
+We demonstrate how the roles that objects/participants play in the described
+activities affects the retrieval mechanism, and how the lack of such a
+mechanism is detrimental to the retrieval task.
+%
+Also, our tests are carried out with the help of off-the-shelf object
+detectors.
+%
+Moreover, we do so restricting our method to only use off-the-shelf pre-trained
+object detectors from the current state-of-the-art.
+%
+We do so to draw focus to the benefits of our underlying framework, avoiding
+the confounds of detectors trained in-house.
+%
+The scalability and efficacy of our framework is demonstrated by deploying its
+capabilities across a corpus of ten full-length Hollywood videos, amounting to
+approximately 25 hours of video, and comparing against existing
+state-of-the-art methods to do video retrieval.
+%
+The incorporation of query semantics provides us with a distinct advantage in
+such tasks.
+
+\section{The \LincolnLogs\ Anthology}
+This work involves reasoning about the physical structure of composable
+entities, involving integration within vision, and across vision and language
+through the medium of robotics.
+%
+The work is instantiated in the domain of \LincolnLogs, which allows for a
+combinatorially large number of assemblies from a relatively tiny inventory of
+1-, 2-, and 3-notch logs.
+%
+We estimate the composition of a given assembly of \LincolnLogs\ by reasoning
+about the unreliable low-level visual features in the context of high-level
+physical constraints of assembly (E.g., logs combine orthogonally and only at
+notches).
+%
+The framework allows for reasoning about occlusion, reasoning about an assembly
+from multiple views and partial disassembly, and reasoning about an assembly in
+the context of natural-language descriptions of the structure.
+%
+The linguistic framework derives the lexicon to describe a \LincolnLog\
+assembly from topology, Such integration in our framework is made easy by the
+fact that, in practice, they only involve expanding and contracting the overall
+constraint-satisfaction problem.
+
+\section{Game-Learning and Language}
+Inspired by how children appear to learn rules about the world from
+demonstration and interaction, we model, in the domain of board games, an
+analogous system that learns the rules of board games from visual
+observation.
+%
+Here, two robotic agents, the protagonist and the antagonist play a physically
+instantiated board game.
+%
+A third agent, the wannabe, watches the gameplay and attempts to infer the
+rules of the game, given some minor background knowledge (what directions mean,
+etc.) about the world.
+%
+The physical instantiation forces the inference process, driven by Inductive
+Logic Programming (ILP), to happen from real-world input.
+%
+Using this frame- work, we learn the complete rules (initial board, legal move
+generator, and outcome predicate) of six games -- Tic-Tac-Toe, Hexapawn and 4
+variants thereof.
+%
+Furthermore, We introduce a natural-language component into the system, by
+giving the protagonist and the antagonist the rules of the game being played in
+English, and enabling translation from the internal representations to natural
+language.
+
+\section{Compositionality in the Brain}
+
+We investigate the compositionality of argument structure, i.e., how
+participants fill roles in events, of sentences in the human brain, in a
+first-of-its-kind study where people in an fMRI machine are shown videos
+depicting activities that correspond to unique sentential descriptions.
+%
+We recover the compositional-semantic components independently from
+counterbalanced experiments on stimuli that vary multiple variables by
+collapsing along different variables, showing that brain-activity patterns
+reflect compositionality in sentence structure as the composition of
+independent experiments matches those obtained jointly.
+%
+Additionally, we also produce the first result on the classification of verbs
+in the human brain, performing with 80\% accuracy on a 1-out-of-6
+classification task involving the picked up, put down, carry, hold, walk, and
+dig events.
+%
+Furthermore, the robustness of these results were tested and verified by both
+testing across subjects and across sites (to account for variance in
+equipment).
+
+\section{Real-time Action Recognition}
+The central contribution of this body of work is the implementation and
+deployment of a real-time multi-class activity and description system.
+%
+We make use of our viterbi-tracker framework for activity recognition, running
+a multitude of such trackers in parallel on objects, using both our own
+in-house object detector and the Felzenszwalb object detector optimized for the
+GPU.
+%
+The in-house object detector is particularly effective in identifying rigid
+objects under arbitrary spatial transformations, with only a handful of
+training examples; a shortfall of existing state-of-the-art object detectors.
+%
+The system is capable of identifying actions such as picked up, put down,
+raised, lowered, give, carry, walked, hold, replaced, and exchanged.
+%
+On identifying the action, the system produces natural-language output, both
+orthographic and aural, describing any subset of the action, its constituents,
+the roles played by such, spatial relations, and the temporal profile of the
+action in sentential form.

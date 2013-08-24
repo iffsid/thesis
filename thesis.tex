@@ -1,0 +1,80 @@
+\documentclass[ece,dissertation]{puthesis}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[breaklinks=true,hyperfootnotes=false,colorlinks,bookmarks=false,citecolor=MidnightBlue,linkcolor=BrickRed,urlcolor=MidnightBlue]{hyperref}
+\urlstyle{tt}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{paralist}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{qtree}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\usepackage[]{algorithm2e}
+\SetAlgoCaptionSeparator{.}
+\SetAlCapFnt{\small}
+\SetAlCapSty{textit}
+\SetAlgoCaptionLayout{small}
+\SetAlFnt{\footnotesize}
+
+\graphicspath{{images/}{figures/}}
+
+\title{Compositionality in Vision and Language}
+
+\author{Siddharth Narayanaswamy}{Siddharth, N}
+
+\pudegree{Doctor of Philosophy}{Ph.D.}{May}{2007}
+
+\majorprof{Jeffrey Mark Siskind}
+
+\campus{West Lafayette}
+
+\input{mydefs}
+
+\newcommand{\margins}{\Repeat{Show where the margins for the page are.}{4}}
+
+\let\en=\ensuremath
+
+\newcommand{\ve}[2]{\en{#1_1},~\en{#1_2},\ \ldots,~\en{#1_{#2}}}
+
+%\includeonly{front,introduction}
+
+\begin{document}
+
+\volume
+
+\include{front}
+
+\include{introduction}
+
+\include{papers/icra2011}
+\include{papers/acs2012a}
+\include{papers/nips2013e}
+\include{papers/cvpr2013}
+\include{papers/nips2013d}
+
+%\include{summary}
+%\include{recommendations}
+% \appendices
+% \include{demo-citations}
+% \include{demo-figures}
+% \include{demo-mathematics}
+% \include{demo-multicols}
+% \include{demo-tables}
+% \include{demo-text}
+
+\cite{Kitani_2012_7250}
+
+\bibliography{thesis}
+
+\include{vita}
+
+\end{document}
