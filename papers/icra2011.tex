@@ -1,7 +1,7 @@
 \chapter{A Visual Language Model for Estimating Object Pose and Structure in a Generative Visual Domain}
 
 \section{Introduction}
-\label{sec:introduction}
+\label{sec-ll1:introduction}
 
 Human language is \emph{generative}:\footnote{We mean the Chomskyan sense of
   generative, not the sense in contrast to discriminative.
@@ -55,6 +55,15 @@ We remedy this with a \emph{visual language model} or a \emph{grammar} of
 \LincolnLogs, a specification of which combinations of logs constitute valid
 assemblies.
 
+\begin{wrapfigure}[8]{r}{0.55\textwidth}
+  \vspace*{-5ex}
+  \centering
+  \includegraphics[width=0.55\textwidth]{images/log-parameters.png}
+  \vspace*{-7ex}
+  \caption{\small The 3D geometric shape parameters of \LincolnLogs.}
+  \label{fig-ll1:logs}
+\end{wrapfigure}
+%
 The analogy breaks down in two ways requiring novel methods.
 %
 First, most computer models of speech and language assume that the grammar is
@@ -92,20 +101,10 @@ assembly, including the 3D pose of each component, with sufficient accuracy to
 support robotic manipulation and, in particular, the ability to robotically
 construct a symbolically precise replicate of a structure from a single image.
 
-\begin{figure}
-\begin{center}
-\resizebox{3in}{!}{\includegraphics[width=0.5\textwidth]{images/log-parameters.png}}
-\end{center}
-\vskip -15px
-\caption{\small The 3D geometric shape parameters of \LincolnLogs.}
-\vskip -15px
-\label{fig:logs}
-\end{figure}
-
 \LincolnLog\ structures are composed out of a small inventory of components,
 namely 1-notch, 2-notch, and 3-notch logs.
 %
-As shown in Fig.~\ref{fig:logs}, such logs are characterized by a small number
+As shown in Fig.~\ref{fig-ll1:logs}, such logs are characterized by a small number
 of shape parameters: the inter-notch distance~$l_1$, the log diameter~$l_2$, and
 the distance~$l_3$ from a log end to the closest notch center.
 %
@@ -120,7 +119,7 @@ The lines for even layers are mutually parallel, the lines for odd layers are
 mutually parallel, and the projections of a line from an even layer and an odd
 layer onto the work surface are perpendicular.
 %
-We refer to this set of lines as the \defoccur{grid} (see Fig.~\ref{fig:pose}).
+We refer to this set of lines as the \defoccur{grid} (see Fig.~\ref{fig-ll1:pose}).
 %
 This grid imposes a symbolic structure on the \LincolnLog\ assembly.
 %
@@ -130,11 +129,11 @@ the structure pose: the transformation from the grid coordinate system to the
 camera coordinate system.
 %
 Estimating the structure of a \LincolnLog\ assembly thus reduces to two phases:
-estimating the structure pose (section~\ref{sec:pose}) and determining the
-log occupancy at each symbolic grid position (section~\ref{sec:occupancy}).
+estimating the structure pose (section~\ref{sec-ll1:pose}) and determining the
+log occupancy at each symbolic grid position (section~\ref{sec-ll1:occupancy}).
 
 \section{Estimating the structure pose}
-\label{sec:pose}
+\label{sec-ll1:pose}
 
 Before beginning these two phases, we first compute a mask that separates the
 \LincolnLog\ structure in the image foreground from the background.
@@ -232,7 +231,7 @@ The second step estimates pose more accurately (typically within~5mm translation
 and~2$^{\circ}$ rotation), but only with close initial estimates, such as those
 provided by the first step.
 
-Fig.~\ref{fig:pose} illustrates successful pose estimation of several
+Fig.~\ref{fig-ll1:pose} illustrates successful pose estimation of several
 \LincolnLog\ structures.
 %
 Note that we estimate the pose of a target object from a single image without
@@ -242,22 +241,21 @@ information from the domain, namely that the object is a valid \LincolnLog\
 assembly.
 
 \begin{figure}
-\begin{center}
-% \begin{tabular}{@{}c@{\hspace*{4pt}}c@{}}
-\resizebox{1.6in}{!}{\includegraphics[width=0.49\textwidth]{images/pose1-cut.jpg}}
-% &
-\resizebox{1.6in}{!}{\includegraphics[width=0.49\textwidth]{images/pose2-cut.jpg}}
-% \end{tabular}
-\end{center}
+\centering
+\begin{tabular}{@{}c@{\hspace*{4pt}}c@{}}
+  \includegraphics[width=0.48\textwidth]{images/pose1-cut.jpg}
+  &
+  \includegraphics[width=0.48\textwidth]{images/pose2-cut.jpg}
+\end{tabular}
 %
 \caption{\small Estimating the pose of an arbitrary \LincolnLog\ assembly and
   the symbolic grid thus imposed on the assembly.}
 %
-\label{fig:pose}
+\label{fig-ll1:pose}
 \end{figure}
 
 \section{Determining the log occupancy at each symbolic grid position}
-\label{sec:occupancy}
+\label{sec-ll1:occupancy}
 
 The symbolic grid positions~$q=(i,j,k)$ refer to points along log medial axes
 at notch centers.
@@ -274,16 +272,15 @@ We construct a discrete random variable~$Z_q$ for each grid position~$q$ that
 ranges over these seven possibilities.
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.49\textwidth]{images/random-variables.png}
-\end{center}
+\centering
+\includegraphics[width=0.7\textwidth]{images/random-variables.png}
 %
-\vskip -20px
+\vskip -18px
 \caption{\small The random variables~$Z^+_q$ and~$Z^-_q$ that correspond to log
   ends for grid position~$q$ and the random variables~$Z^u_q$, $Z^v_q$,
   and~$Z^w_q$ that correspond to log segments.}
 %
-\label{fig:endsandsegs}
+\label{fig-ll1:endsandsegs}
 \vskip -15px
 \end{figure}
 
@@ -317,7 +314,7 @@ length~$l_3$ behind and ahead of~$q$ respectively, along the direction for the
 layer of~$q$ while~$Z^w_q$ encodes the presence or absence of a log segment of
 length $l_1-2l_3$ between grid positions along the same layer.
 %
-Fig.~\ref{fig:endsandsegs} depicts the log ends and log segments that
+Fig.~\ref{fig-ll1:endsandsegs} depicts the log ends and log segments that
 correspond to a given grid position as described above.
 
 We formulate a stochastic constraint-satisfaction problem
@@ -326,24 +323,25 @@ We formulate a stochastic constraint-satisfaction problem
 The constraints encode the validity of an assembly.
 %
 We refer to these constraints as the \defoccur{grammar} of
-\LincolnLogs\ (section~\ref{sec:grammar}).
+\LincolnLogs\ (section~\ref{sec-ll1:grammar}).
 %
 We take image evidence to impose priors on the variables~$Z^+_q$, $Z^-_q$,
-$Z^u_q$, $Z^v_q$, and~$Z^w_q$ (sections~\ref{sec:evidence}
-and~\ref{sec:mapping}) and solve this stochastic CSP to perform structure
-estimation (section~\ref{sec:structure}).
+$Z^u_q$, $Z^v_q$, and~$Z^w_q$ (sections~\ref{sec-ll1:evidence}
+and~\ref{sec-ll1:mapping}) and solve this stochastic CSP to perform structure
+estimation (section~\ref{sec-ll1:structure}).
 
 \subsection{Evidence for the presence or absence of logs}
-\label{sec:evidence}
-\begin{figure}
-\begin{center}
-\resizebox{3in}{!}{\includegraphics[width=0.5\textwidth]{images/ellipse-filter-small.jpg}}
-\end{center}
-\vskip -10px
-\caption{\small Elliptical edge filter for detecting log ends}
-\label{fig:efilter}
-\end{figure}
+\label{sec-ll1:evidence}
 
+\begin{wrapfigure}[9]{r}{0.48\textwidth}
+\centering
+\vskip -20px
+\includegraphics[width=0.48\textwidth]{images/ellipse-filter-small.jpg}
+\vskip -12px
+\caption{\small Elliptical edge filter for detecting log ends}
+\label{fig-ll1:efilter}
+\end{wrapfigure}
+%
 Given the pose~$p$, a log end present as the result of~$Z^+_q$ or~$Z^-_q$ being
 true will manifest as an ellipse of known shape, size, and position in the
 image.
@@ -365,7 +363,7 @@ We then construct an indicator function~$f(x,y)$ with the value~1 for
 points~$(x,y)$ inside the ellipse and the value~0 for points outside the
 ellipse and convolve this with a Laplacian of a Gaussian filter,
 $\mathrm{LoG}(r,\sigma)$, to obtain an elliptical edge filter~$E(x,y,a,b,\theta)$
-(Fig.~\ref{fig:efilter}).
+(Fig.~\ref{fig-ll1:efilter}).
 %
 Nominally, a high response to this filter applied to an image correlates with
 the presence of an elliptical feature with parameters $x$, $y$, $a$, $b$, and
@@ -398,7 +396,7 @@ vertically stacked logs would yield less-pronounced edges.
 Thus we use a more sensitive method to determine evidence for log segments.
 %
 Given the pose~$p$ of the structure, we recompute the prominent edge
-orientations~$o_1$ and~$o_2$ using the methods from section~\ref{sec:pose}
+orientations~$o_1$ and~$o_2$ using the methods from section~\ref{sec-ll1:pose}
 (this time applied to the output of the second step of pose estimation, not the
 first, to give a more accurate estimate of these orientations).
 %
@@ -424,7 +422,7 @@ The length of the longest line segment found correlates with the presence of the
 target log segment.
 
 \subsection{Mapping evidence to priors}
-\label{sec:mapping}
+\label{sec-ll1:mapping}
 %
 We train a mapping function from evidence to priors for the log-segment and
 log-end evidence functions respectively on a set of~30 images annotated with
@@ -444,7 +442,7 @@ provide the mapping function.
 The weighting factor~$e$ typically takes the form of a real value $e\in(0,1)$.
 
 \subsection{The grammar of Lincoln Logs}
-\label{sec:grammar}
+\label{sec-ll1:grammar}
 
 % needs work: reusing b, n, and p
 
@@ -549,7 +547,7 @@ and enforce log-segment constraints (\ref{constraintF}--\ref{constraintG}) for
 the layer above the top of the structure.
 
 \subsection{Structure estimation}
-\label{sec:structure}
+\label{sec-ll1:structure}
 %
 To perform structure estimation we first establish priors over the random
 variables~$Z^+_q$ and~$Z^-_q$ that correspond to log ends and the random
@@ -604,7 +602,7 @@ method is faster to compute for the relatively larger assemblies when compared
 to the latter.
 
 \subsection{Occlusion}
-\label{sec:occlusion}
+\label{sec-ll1:occlusion}
 
 Nominally, with the above method, one derives evidence for the presence or
 absence of log ends and log segments of the various kinds at every possible
@@ -640,7 +638,7 @@ process until convergence.
 We have recently implemented this algorithm and expect to report on its
 performance in the future.
 %
-All experiments reported in section~\ref{sec:results} were performed with
+All experiments reported in section~\ref{sec-ll1:results} were performed with
 manual annotation of occlusion information.
 %
 Note that we only annotate for a given symbolic log-segment or log-end
@@ -650,15 +648,14 @@ not that position is \emph{occupied} with a log segment or log end.
 The latter is determined automatically.
 
 \section{Experimental results}
-\label{sec:results}
+\label{sec-ll1:results}
 \addtolength{\textheight}{-0.32cm}
 
 \begin{figure}
-\begin{center}
+\centering
 \hskip -10px
-\resizebox{3.5in}{!}{\includegraphics[width=0.5\textwidth]{images/graph.png}}
-\end{center}
-\vskip -8px
+\includegraphics[width=1.0\textwidth]{images/graph.png}
+\vskip -20px
 %
 \caption{\small ROC curves.
 %
@@ -678,53 +675,61 @@ priors.
 The blue curve measures ROC for~$Z^+_q$, $Z^-_q$, $Z^u_q$, $Z^v_q$, and~$Z^w_q$
 under all constraints varying the mapping from evidence to priors.}
 %
-\label{fig:roc}
+\label{fig-ll1:roc}
 \vskip-3ex
 \end{figure}
 
-\begin{figure*}
-\begin{center}
-\begin{tabular}{@{}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{}}
-\includegraphics[width=0.25\textwidth]{images/1263244624-1500-matlab.jpeg}&
-\includegraphics[width=0.25\textwidth]{images/1263244624-1500-pb.jpeg}&
-\includegraphics[width=0.25\textwidth]{images/1263244624-1500-ncuts.jpeg}&
-\includegraphics[width=0.25\textwidth]{images/1263244624-1500-mshift.jpeg}\\
-(a)&(b)&(c)&(d)
+\begin{figure}
+\centering
+% \begin{tabular}{@{}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{}}
+% \includegraphics[width=0.25\textwidth]{images/1263244624-1500-matlab.jpeg}&
+% \includegraphics[width=0.25\textwidth]{images/1263244624-1500-pb.jpeg}&
+% \includegraphics[width=0.25\textwidth]{images/1263244624-1500-ncuts.jpeg}&
+% \includegraphics[width=0.25\textwidth]{images/1263244624-1500-mshift.jpeg}\\
+% (a)&(b)&(c)&(d)
+% \end{tabular}
+\begin{tabular}{@{}c@{\hspace*{2pt}}c@{}}
+\includegraphics[height=0.215\textheight]{images/1263244624-1500-matlab.jpeg}&
+\includegraphics[height=0.215\textheight]{images/1263244624-1500-pb.jpeg}\\
+(a)&(b)\\[1ex]
+\includegraphics[height=0.215\textheight]{images/1263244624-1500-ncuts.jpeg}&
+\includegraphics[height=0.215\textheight]{images/1263244624-1500-mshift.jpeg}\\
+(c)&(d)
 \end{tabular}
-\end{center}
+\vspace*{-4ex}
 \caption{\small A comparison with a number of standard edge detectors and segmentation methods.
 %
 Neither (a)~\Matlab's Canny edge detector nor (b)~the \Pb\ edge detector reliably find edges separating adjacent logs or log ends.
 %
 Neither (c)~Normalized Cut nor (d)~Mean Shift segment out the log parts.}
 %
-\label{fig:comparison}
-\end{figure*}
+\label{fig-ll1:comparison}
+\end{figure}
 
 
-\begin{figure*}
-\begin{center}
+\begin{figure}
+\centering
 \begin{tabular}{@{}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{}}
 \includegraphics[width=0.195\textwidth]{images/1263244624-1500-0-raw.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263244624-1500-0-segment.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263244624-1500-0-end.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263244624-1500-0-both.jpg}&
-\includegraphics[width=0.195\textwidth]{images/1263244624-1500-0.jpg}\\
+\includegraphics[width=0.195\textwidth]{images/1263244624-1500-0.jpg}\\[-0.7ex]
 \includegraphics[width=0.195\textwidth]{images/1263244065-1200-ll-raw.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263244065-1200-ll-segment.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263244065-1200-ll-end.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263244065-1200-ll-both.jpg}&
-\includegraphics[width=0.195\textwidth]{images/1263244065-1200-ll.jpg}\\
+\includegraphics[width=0.195\textwidth]{images/1263244065-1200-ll.jpg}\\[-0.7ex]
 \includegraphics[width=0.195\textwidth]{images/1263242135-1800-ll-raw.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263242135-1800-ll-segment.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263242135-1800-ll-end.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263242135-1800-ll-both.jpg}&
-\includegraphics[width=0.195\textwidth]{images/1263242135-1800-ll.jpg}\\
+\includegraphics[width=0.195\textwidth]{images/1263242135-1800-ll.jpg}\\[-0.7ex]
 \includegraphics[width=0.195\textwidth]{images/1263242360-1800-0-raw.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263242360-1800-0-segment.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263242360-1800-0-end.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263242360-1800-0-both.jpg}&
-\includegraphics[width=0.195\textwidth]{images/1263242360-1800-0.jpg}\\
+\includegraphics[width=0.195\textwidth]{images/1263242360-1800-0.jpg}\\[-0.7ex]
 \includegraphics[width=0.195\textwidth]{images/1263243842-900-0-raw.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263243842-900-0-segment.jpg}&
 \includegraphics[width=0.195\textwidth]{images/1263243842-900-0-end.jpg}&
@@ -732,7 +737,6 @@ Neither (c)~Normalized Cut nor (d)~Mean Shift segment out the log parts.}
 \includegraphics[width=0.195\textwidth]{images/1263243842-900-0.jpg}\\
 (a)&(b)&(c)&(d)&(e)
 \end{tabular}
-\end{center}
 %
 \caption{\small (a)~Raw detector response.
 %
@@ -759,14 +763,14 @@ We suggest that the reader view this figure at a high magnification level in a
 PDF viewer to appreciate the images.
 }
 %
-\label{fig:results}
-\end{figure*}
+\label{fig-ll1:results}
+\end{figure}
 
 We took images of~32 distinct \LincolnLog\ structures, each from~5 distinct
 poses resulting in a total of~160 images.
 %
 We performed foreground-background separation and pose estimation for all~160
-images using the methods from section~\ref{sec:pose}.
+images using the methods from section~\ref{sec-ll1:pose}.
 %
 Pose was estimated within~5mm translation and~2$^{\circ}$ rotation of ground
 truth for~142 images.
@@ -775,34 +779,34 @@ We discarded the~18 images with inaccurate pose estimation and performed
 structure estimation on the remainder.
 %
 The results for~5 images, all of distinct structures, are shown in
-Fig.~\ref{fig:results}.
+Fig.~\ref{fig-ll1:results}.
 %
-Fig.~\ref{fig:results}(a) was derived by thresholding the priors on~$Z^+_q$,
+Fig.~\ref{fig-ll1:results}(a) was derived by thresholding the priors on~$Z^+_q$,
 $Z^-_q$, $Z^u_q$, $Z^v_q$, and~$Z^w_q$ at $t=0.5$.
 %
-Fig.~\ref{fig:results}(b--d) were derived by solving a stochastic CSP with
+Fig.~\ref{fig-ll1:results}(b--d) were derived by solving a stochastic CSP with
 various subsets of the constraints and rendering the values of~$Z^+_q$,
 $Z^-_q$, $Z^u_q$, $Z^v_q$, and~$Z^w_q$ for the solution provided by the first
-method in section~\ref{sec:structure}.
+method in section~\ref{sec-ll1:structure}.
 %
-Fig.~\ref{fig:results}(e) was derived by solving the stochastic CSP with all
+Fig.~\ref{fig-ll1:results}(e) was derived by solving the stochastic CSP with all
 constraints and rendering the values of~$Z_q$ for the solution provided by the
-first method in section~\ref{sec:structure}.
+first method in section~\ref{sec-ll1:structure}.
 %
 Note that our method determines the correct component type ($Z_q$) of most
-occluded logs in the assemblies in the second row of Fig.~\ref{fig:results}(e).
+occluded logs in the assemblies in the second row of Fig.~\ref{fig-ll1:results}(e).
 %
 It gives an incorrect component type for only a single log in that row.
 
 We conducted experiments to determine how much the grammar improves the
 accuracy of structure estimation.
 %
-We performed variants of the runs in Fig.~\ref{fig:results}(a-d), varying the
+We performed variants of the runs in Fig.~\ref{fig-ll1:results}(a-d), varying the
 threshold~$t$ and the mapping from evidence to priors to produce the ROC curves
-depicted in Fig.~\ref{fig:roc}.
+depicted in Fig.~\ref{fig-ll1:roc}.
 %
 The mapping function is varied through the weighting factor~$e$ for the linear
-interpolator discussed in section~\ref{sec:mapping}.
+interpolator discussed in section~\ref{sec-ll1:mapping}.
 
 Pose and structure estimation is sufficiently robust to support robotic
 manipulation.
@@ -814,7 +818,7 @@ well as videos of semiautonomous robotic assembly of replicate \LincolnLog\
 structures from the same estimated pose and structure.
 
 \section{Conclusion}
-\label{sec:conclusion}
+\label{sec-ll1:conclusion}
 
 \LincolnLogs\ are children's toys yet the computational problem we present is
 \emph{not} a toy.
@@ -834,7 +838,7 @@ No standard edge detector (\eg\ Canny \cite{Canny1986} or \Pb\
 \cite{Maire2008}) can reliably find edges separating adjacent logs or circular
 log ends and no standard segmentation method (\eg\ Normalized Cut
 \cite{Shi2000} or Mean Shift \cite{Comaniciu2002}) can reliably find log parts
-\emph{even when fully visible} as shown in Fig.~\ref{fig:comparison}.
+\emph{even when fully visible} as shown in Fig.~\ref{fig-ll1:comparison}.
 %
 Even our filter-based feature detectors, which use pose information along with
 constraints from the language model to \emph{tune to the expected feature at
