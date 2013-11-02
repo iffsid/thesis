@@ -173,21 +173,22 @@ information.
 \begin{figure}
   \centering
   \begin{tabular}{@{}c@{\hspace{2pt}}c@{}}
-    \raisebox{7pt}{\includegraphics[width=0.25\textwidth]{images/real-log-qw}}&
-    \begin{tabular}[b]{@{}c@{\hspace{2pt}}c@{\hspace{2pt}}c@{\hspace{2pt}}c@{}}
-      \includegraphics[width=0.18\textwidth]{images/poss-0-small}&
-      \includegraphics[width=0.18\textwidth]{images/poss-1-small}&
-      \includegraphics[width=0.18\textwidth]{images/poss-2-small}&
-      \includegraphics[width=0.18\textwidth]{images/poss-3-small}\\*[-1ex]
-      {\tiny $\emptyset$}&{\tiny $(1,1)$}&{\tiny $(1,2)$}&{\tiny $(2,2)$}\\
-      \includegraphics[width=0.18\textwidth]{images/poss-4-small}&
-      \includegraphics[width=0.18\textwidth]{images/poss-5-small}&
-      \includegraphics[width=0.18\textwidth]{images/poss-6-small}&
-      \includegraphics[width=0.1\textwidth]{images/pose2-cut}\\*[-1ex]
-      {\tiny $(1,3)$}&{\tiny $(2,3)$}&{\tiny $(3,3)$}&{\small (c)}\\
-    \end{tabular}
-    \\*[-1ex]
-     {\small (a)}&{\small (b)}
+    \includegraphics[width=0.47\textwidth]{images/real-log-qw}&
+    \includegraphics[width=0.493\textwidth]{images/pose2-cut}\\
+    (a)&(c)
+  \end{tabular}
+  \vspace*{2ex}
+  \begin{tabular}{@{}c@{\hspace{2pt}}c@{\hspace{2pt}}c@{\hspace{2pt}}c@{}}
+    \includegraphics[width=0.24\textwidth]{images/poss-0-small}&
+    \includegraphics[width=0.24\textwidth]{images/poss-1-small}&
+    \includegraphics[width=0.24\textwidth]{images/poss-2-small}&
+    \includegraphics[width=0.24\textwidth]{images/poss-3-small}\\
+    $\emptyset$&$(1,1)$&$(1,2)$&$(2,2)$\\[1ex]
+    \includegraphics[width=0.24\textwidth]{images/poss-4-small}&
+    \includegraphics[width=0.24\textwidth]{images/poss-5-small}&
+    \includegraphics[width=0.24\textwidth]{images/poss-6-small}&\\
+    $(1,3)$&$(2,3)$&$(3,3)$&\\
+    \multicolumn{4}{c}{(b)}
   \end{tabular}
   %
   \par\vspace*{-2ex}
@@ -245,25 +246,23 @@ Figure~\ref{fig:grammar-assemblies}(b).
 
 \begin{figure}
   \centering
-  \begin{tabular}{@{}c@{\hspace{8pt}}c@{}}
-    \begin{small}
-      \begin{tabular}{@{}p{0.48\textwidth}@{}}
-        2-notch logs occupy 2 adjacent grid points\\[0.8ex]
-        3-notch logs occupy 3 adjacent grid points\\[0.8ex]
-        1- and 2-notch logs must be supported at all notches\\[0.8ex]
-        3-notch logs must be supported in at least 2 notches\\[0.8ex]
-        log ends must be at the ends of logs\\[0.8ex]
-        short segments indicate occupancy above or below\\[0.8ex]
-        long segments indicate presence of a multi-notch log\\
-      \end{tabular}
-    \end{small}&
-    \begin{tabular}{@{}c@{\hspace{2pt}}c@{}}
-      \includegraphics[width=0.19\textwidth]{images/valid-assemblies-1}&
-      \includegraphics[width=0.19\textwidth]{images/valid-assemblies-2}\\[-0.3ex]
-      \includegraphics[width=0.19\textwidth]{images/invalid-assemblies-1}&
-      \includegraphics[width=0.19\textwidth]{images/invalid-assemblies-2}\\
-    \end{tabular}\\
-     {\small (a)}&{\small (b)}\\
+  \begin{tabular}{@{}l@{}}
+    2-notch logs occupy 2 adjacent grid points\\
+    3-notch logs occupy 3 adjacent grid points\\
+    1- and 2-notch logs must be supported at all notches\\
+    3-notch logs must be supported in at least 2 notches\\
+    log ends must be at the ends of logs\\
+    short segments indicate occupancy above or below\\
+    long segments indicate presence of a multi-notch log\\[1ex]
+    \multicolumn{1}{c}{(a)}
+  \end{tabular}
+  \par\vspace*{2ex}
+  \begin{tabular}{@{}c@{\hspace{2pt}}c@{}}
+    \includegraphics[width=0.48\textwidth]{images/valid-assemblies-1}&
+    \includegraphics[width=0.48\textwidth]{images/valid-assemblies-2}\\[-0.5ex]
+    \includegraphics[width=0.48\textwidth]{images/invalid-assemblies-1}&
+    \includegraphics[width=0.48\textwidth]{images/invalid-assemblies-2}\\[1ex]
+    \multicolumn{2}{c}{(b)}
   \end{tabular}
   %
   \par\vspace*{-2ex}
@@ -366,7 +365,6 @@ computed:
       \Phi\left[\mathbf{Z},\mathbf{Z}^+,\mathbf{Z}^-,\mathbf{Z}^u,\mathbf{Z}^v,\mathbf{Z}^w\right]}}
   \hspace{-10pt}\Pr\left(\mathbf{Z},\mathbf{Z}^{+},\mathbf{Z}^{-},\mathbf{Z}^u,\mathbf{Z}^v,\mathbf{Z}^w\right)
   \label{eq:structure-estimation}
-\vspace*{-0.5ex}
 \end{equation}
 %
 While this method can determine the conditional probability distribution over
@@ -388,31 +386,30 @@ given our system of constraints, for a few relatively small grid sizes.
 
 \begin{figure}
   \centering
-  \begin{tabular}{@{}cc@{}}
-    \begin{tabular}[b]{@{}c@{\hspace*{2pt}}c@{}}
-    \includegraphics[width=0.225\textwidth]{images/log-end-visibility}&
-    \includegraphics[width=0.225\textwidth]{images/log-segment-visibility}\\
-     {\small (a)}&{\small (b)}\\
-    \multicolumn{2}{@{}c@{}}{\scalebox{0.6}{\begin{tabular}[b]{@{\hspace{4pt}}c@{\hspace{10pt}}r@{\hspace{10pt}}r@{\hspace{10pt}}r@{\hspace{4pt}}}
-    \hline\\[-2ex]
-    $\substack{\text{\normalsize size}\\[0.5ex]
-      \left(\text{X} \times \text{YX} \times \text{YZ} \times \text{Z}\right)}$ &
-    \# grid points &
-    $\substack{\text{\normalsize possible}\\ \text{\normalsize structures}}$ &
-    $\substack{\text{\normalsize valid}\\ \text{\normalsize structures}}$\\[1ex]
-    \hline\\[-2ex]
-    $2 \times 2 \times 2 \times 2$ &           $8$ & $5 \times 10^{6}$ &    $233$\\
-    $2 \times 3 \times 2 \times 2$ &          $12$ &         $10^{10}$ &   $1341$\\
-    $2 \times 3 \times 3 \times 2$ &          $16$ &         $10^{13}$ &   $6667$\\
-    $3 \times 2 \times 2 \times 3$ &          $12$ &         $10^{10}$ &   $5461$\\
-    $3 \times 2 \times 2 \times 3$ &          $18$ &         $10^{15}$ & $670179$\\
-    \hline
-    \end{tabular}}}\\
-    \multicolumn{2}{@{}c@{}}{\small (c)}
-    \end{tabular}&
-    \begin{tabular}[b]{@{}c@{}}
-      \includegraphics[width=0.415\textwidth]{images/robots}\\{\small (d)}
-    \end{tabular}
+  \begin{tabular}{@{}c@{\hspace*{2pt}}c@{}}
+    \includegraphics[width=0.45\textwidth]{images/log-end-visibility}&
+    \includegraphics[width=0.45\textwidth]{images/log-segment-visibility}\\
+    (a)&(b)
+  \end{tabular}
+  \par\vspace*{1ex}
+  \begin{tabular}{@{}rc@{}}
+    \raisebox{15ex}{(c)}&
+    \begin{tabular}[b]{@{}c@{\hspace{10pt}}r@{\hspace{10pt}}r@{\hspace{10pt}}r@{}}
+      \toprule
+      $\substack{\text{\normalsize size}\\[0.5ex]
+        \left(\text{X} \times \text{YX} \times \text{YZ} \times \text{Z}\right)}$ &
+      \# grid points &
+      $\substack{\text{\normalsize possible}\\ \text{\normalsize structures}}$ &
+      $\substack{\text{\normalsize valid}\\ \text{\normalsize structures}}$\\[1ex]
+      \midrule
+      $2 \times 2 \times 2 \times 2$ &           $8$ & $5 \times 10^{6}$ &    $233$\\
+      $2 \times 3 \times 2 \times 2$ &          $12$ &         $10^{10}$ &   $1341$\\
+      $2 \times 3 \times 3 \times 2$ &          $16$ &         $10^{13}$ &   $6667$\\
+      $3 \times 2 \times 2 \times 3$ &          $12$ &         $10^{10}$ &   $5461$\\
+      $3 \times 2 \times 2 \times 3$ &          $18$ &         $10^{15}$ & $670179$\\
+      \bottomrule
+    \end{tabular}\\
+    \raisebox{15ex}{(d)} & \includegraphics[width=0.55\textwidth]{images/robots}
   \end{tabular}
   %
   \par\vspace*{-2ex}
@@ -435,7 +432,7 @@ given our system of constraints, for a few relatively small grid sizes.
   %
   \label{fig:complexity}
   %
-  \par\vspace*{-2ex}
+  \par\vspace*{-5ex}
 \end{figure}
 
 \begin{algorithm}[t]
@@ -731,7 +728,6 @@ associated with visible log features and compute the maximum-likelihood
 assignment to the random variables associated with occluded log features,
 $\hat{\mathbf{Z}}^f$, consistent with a given structure estimate:
 %
-\vspace*{0.5ex}
 \begin{equation*}
   \hat{\mathbf{Z}}^f=
   \argmax_{\substack{Z^f_q\\V^f_q=\false}}\hspace{-4.5ex}
@@ -739,7 +735,6 @@ $\hat{\mathbf{Z}}^f$, consistent with a given structure estimate:
       \Phi[\mathbf{Z},\mathbf{Z}^{+},\mathbf{Z}^{-},\mathbf{Z}^u,\mathbf{Z}^v,\mathbf{Z}^w]}}\hspace{-6ex}
   \Pr(\mathbf{Z},\mathbf{Z}^{+},\mathbf{Z}^{-},\mathbf{Z}^u,\mathbf{Z}^v,\mathbf{Z}^w)
 \end{equation*}
-\vspace*{0.5ex}
 %
 One can then ask the following question: what is the maximal amount~$\delta$
 that one can shift the probability mass on the occluded log-feature random
@@ -753,14 +748,12 @@ Or in simpler terms: \emph{Assume an initial structure estimate derived from a
   about the structure?}
 %
 We compute~$\delta$ using a modified structure-estimation step:
-
-\par\vspace*{-1.25ex}
+%
 \begin{equation*}
   \argmax_{\mathbf{Z}}\hspace{-5ex}
   \sum_{\substack{\mathbf{Z}^{+},\mathbf{Z}^{-},\mathbf{Z}^u,\mathbf{Z}^v,\mathbf{Z}^w\\
       \Phi[\mathbf{Z},\mathbf{Z}^{+},\mathbf{Z}^{-},\mathbf{Z}^u,\mathbf{Z}^v,\mathbf{Z}^w]}}\hspace{-5ex}
   \Pr(\mathbf{Z},\mathbf{Z}^{+},\mathbf{Z}^{-},\mathbf{Z}^u,\mathbf{Z}^v\,\mathbf{Z}^w)=\mathbf{Z}
-  \vspace*{-0.5ex}
 \end{equation*}
 %
 when, for all $q^f$ where $V^f_q=\false$,
@@ -855,14 +848,12 @@ occupancy for a given initial structure.
 Given multiple views $i=1,\ldots,n$ with collections~$\mathbf{Z}_i$ of random
 variables~$Z^+_q$, $Z^-_q$, $Z^u_q$, $Z^v_q$, and~$Z^w_q$ associated with the
 image evidence for log features from those views, we can compute:
-
-\par\vspace*{-2.0ex}
+%
 \begin{equation*}
   \argmax_{\mathbf{Z}}\hspace{-12pt}
   \sum_{\substack{\mathbf{Z}_1\ldots\mathbf{Z}_n\\
       \Phi\left[\mathbf{Z},\mathbf{Z}_1\right]\wedge\cdots\wedge\Phi\left[\mathbf{Z},\mathbf{Z}_n\right]}}
   \hspace{-10pt}\Pr\left(\mathbf{Z},\mathbf{Z}_1,\ldots,\mathbf{Z}_n\right)
-  \vspace*{-0.5ex}
 \end{equation*}
 %
 Two issues arise in doing this.
@@ -920,14 +911,12 @@ We can marginalize over random variables associated with visible log features
 $V^f_{iq} = \true$ and compute the maximum-likelihood assignment
 $\hat{\mathbf{Z}}^f$ to the random variables associated with occluded log
 features that is consistent with a given structure estimate:
-
-\par\vspace*{-2.5ex}
+%
 \begin{equation*}
   \hat{\mathbf{Z}}^f=\argmax_{\substack{Z^f_{iq},V^f_{iq}=\false}}
   \sum_{\substack{Z^f_{iq},V^f_{iq}=\true\\
       \Phi[\mathbf{Z},\mathbf{Z}_1]\wedge\cdots\wedge\Phi[\mathbf{Z},\mathbf{Z}_n]}}
   \Pr(\mathbf{Z},\mathbf{Z}_1,\ldots,\mathbf{Z}_n)
-  \vspace*{-0.5ex}
 \end{equation*}
 %
 We determine those log features that are invisible in all current views but
@@ -951,15 +940,13 @@ In simpler terms: \emph{Assume an initial structure estimate derived from a
 \par\noindent
 %
 For an action yielding a new view, $j$, we compute $\delta'$ as
-
-\par\vspace*{-2ex}
+%
 \begin{equation*}
   \argmax_{\mathbf{Z}}\hspace{-5ex}
   \sum_{\substack{\mathbf{Z}_1\ldots\mathbf{Z}_n\;\mathbf{Z}_j\\
       \Phi[\mathbf{Z},\mathbf{Z}_1]\wedge\cdots\wedge\Phi[\mathbf{Z},\mathbf{Z}_n]
       \wedge\Phi[\mathbf{Z},\mathbf{Z}_j]}}\hspace{-6ex}
   \Pr(\mathbf{Z},\mathbf{Z}_1,\ldots,\mathbf{Z}_n,\mathbf{Z}_j)=\mathbf{Z}
-  \vspace*{-0.5ex}
 \end{equation*}
 when
 \begin{math}
@@ -1110,10 +1097,11 @@ among various pairs of the~32 distinct structures.
 
 \begin{figure}
   \centering
-  \begin{tabular}{@{}cc@{}}
-    \includegraphics[width=0.47\textwidth]{images/visibility}&
-    \includegraphics[width=0.47\textwidth]{images/active-vision}\\[-0.5ex]
-    (a)&(b)
+  \begin{tabular}{@{}c@{}}
+    \includegraphics[width=0.75\textwidth]{images/visibility}\\
+    (a)\\
+    \includegraphics[width=0.75\textwidth]{images/active-vision}\\
+    (b)
   \end{tabular}
   %
   \par\vspace*{-2ex}
@@ -1134,7 +1122,7 @@ among various pairs of the~32 distinct structures.
   %
   \label{fig:visibility}
   %
-  \par\vspace*{-2ex}
+  \par\vspace*{-6ex}
 \end{figure}
 
 We first evaluated automatic visibility estimation.
@@ -1177,17 +1165,15 @@ confidence assessment for a correct structure estimate.
 This resulted in only three false positives and seven false negatives on our corpus.
 
 \begin{figure}
-  \begin{center}
-    \begin{tabular}{@{}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{}}
-      \includegraphics[width=0.24\textwidth]{images/cropped-1263242028-1800-a}&
-      \includegraphics[width=0.24\textwidth]{images/cropped-1263242028-1800-b}&
-      \includegraphics[width=0.24\textwidth]{images/cropped-1263242028-1800-c}&
-      \includegraphics[width=0.24\textwidth]{images/cropped-1263242028-1800-d}\\
-      (a)&(b)&(c)&(d)
-    \end{tabular}
-  \end{center}
-  %
-  \par\vspace*{-5ex}
+  \centering
+  \begin{tabular}{@{}c@{\hspace*{2pt}}c@{}}
+    \includegraphics[width=0.48\textwidth]{images/cropped-1263242028-1800-a}&
+    \includegraphics[width=0.48\textwidth]{images/cropped-1263242028-1800-b}\\
+    (a)&(b)\\[1ex]
+    \includegraphics[width=0.48\textwidth]{images/cropped-1263242028-1800-c}&
+    \includegraphics[width=0.48\textwidth]{images/cropped-1263242028-1800-d}\\
+    (c)&(d)
+  \end{tabular}
   %
   \caption{\small Estimated structure through the following four methods:
     %
@@ -1279,17 +1265,15 @@ Yet this sentence, together with the single image from the first view, is
 sufficient to correctly estimate the structure (d).
 
 \begin{figure}
-  \begin{center}
-    \begin{tabular}{@{}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{\hspace*{2pt}}c@{}}
-      \includegraphics[width=0.24\textwidth]{images/language-view-one}&
-      \includegraphics[width=0.24\textwidth]{images/language-view-two}&
-      \includegraphics[width=0.24\textwidth]{images/language-view-one+two}&
-      \includegraphics[width=0.24\textwidth]{images/language-view-one+sentence}\\
-      (a) View $1$ & (b) View $2$ & (c) View $1 + 2$ & (d) View $1$ $+$ \emph{\textbf{Language}}
-    \end{tabular}
-  \end{center}
-  %
-  \par\vspace*{-5ex}
+  \centering
+  \begin{tabular}{@{}c@{\hspace*{2pt}}c@{}}
+    \includegraphics[width=0.48\textwidth]{images/language-view-one}&
+    \includegraphics[width=0.48\textwidth]{images/language-view-two}\\
+    (a) View $1$ & (b) View $2$\\[1ex]
+    \includegraphics[width=0.48\textwidth]{images/language-view-one+two}&
+    \includegraphics[width=0.48\textwidth]{images/language-view-one+sentence}\\
+    (c) View $1 + 2$ & (d) View $1$ $+$ \emph{\textbf{Language}}
+  \end{tabular}
   %
   \caption{\small An example of joint structure estimation from image evidence
     and natural language.
