@@ -3,7 +3,7 @@ SHELL := /bin/bash
 all: thesis.pdf
 
 clean:
-	find . -type f -regextype posix-egrep -regex .*\.\(aux\|bbl\|blg\|lof\|log\|lot\|toc\) -delete
+	find . -type f -regextype posix-egrep -regex .*\.\(aux\|bbl\|blg\|lof\|log\|lot\|toc\|dvi\) -delete
 
 real-clean:
 	make clean

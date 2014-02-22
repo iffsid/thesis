@@ -8,15 +8,18 @@
 \usepackage{subfigure}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{tikz}
 \usepackage{enumerate}
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{paralist}
 \usepackage{booktabs}
 \usepackage{wrapfig}
-\usepackage{qtree}
+\usepackage{rotating}
 \usepackage{enumitem}
+\usepackage{qtree}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{calc}
 \setlist{nolistsep}
 \usepackage[]{algorithm2e}
 \SetAlgoCaptionSeparator{.}
@@ -31,7 +34,7 @@
 
 \author{Siddharth Narayanaswamy}{Siddharth, N}
 
-\pudegree{Doctor of Philosophy}{Ph.D.}{January}{2014}
+\pudegree{Doctor of Philosophy}{Ph.D.}{February}{2014}
 
 \majorprof{Jeffrey Mark Siskind}
 
@@ -57,14 +60,14 @@
 
 \include{papers/icra2011}
 \include{papers/acs2012a}
-% replace with joint jair and pami papers
-\include{papers/nips2013e}
-% \include{papers/cvpr2013}
+\include{papers/cvpr2014e}
 \include{papers/nips2013d}
 
-\cite{Kitani_2012_7250}
+%% \include{papers/cvpr2013}
 
-\bibliography{thesis}
+\include{summary}
+
+\bibliography{strings,thesis}
 
 \include{vita}
 

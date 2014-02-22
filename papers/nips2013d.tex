@@ -1,8 +1,5 @@
-\chapter{The Compositional Nature of Verb and Argument Representations in the
-  Human Brain}
-
-\section{Introduction}
-\label{sec:introduction}
+\chapter{The Compositional Nature Of Verb And Argument Representations In The Human Brain}
+\label{chapter:nips2013d}
 
 The compositional nature of thought is taken for granted by many in the
 cognitive-science and artificial-intelligence communities.
@@ -38,25 +35,26 @@ Recent work on decoding brain activity corresponding to nouns has
 recovered object identity from nouns presented as image and orthographic
 stimuli.
 %
-\citet{hanson2009} perform classification on still images of two object
-classes: faces and houses, and achieve an accuracy above 93\% on a
-one-out-of-two classification task.
+Hanson and Halchenko \cite{hanson2009} perform classification on still
+images of two object classes: faces and houses, and achieve an
+accuracy above 93\% on a one-out-of-two classification task.
 %
-\citet{connolly2012} perform classification on still images of objects, two
-instances of each of three classes: bugs, birds, and primates, and achieve an
-accuracy between 60\% and 98\% on a one-out-of-two within-class classification
-task and an accuracy between 90\% and 98\% on a one-out-of-three between-class
+Connolly \etal\ \cite{connolly2012} perform classification on still
+images of objects, two instances of each of three classes: bugs,
+birds, and primates, and achieve an accuracy between 60\% and 98\% on
+a one-out-of-two within-class classification task and an accuracy
+between 90\% and 98\% on a one-out-of-three between-class
 classification task.
 %
-\citet{just2010} perform classification on orthographically presented nouns, 5
+Just \etal\ \cite{just2010} perform classification on orthographically presented nouns, 5
 exemplars from each of 12 classes, achieving a mean rank accuracy of 72.4\% on
 a one-out-of-60 classification task, both within and between subjects.
 %
-\citet{pereira2012} incorporate semantic priors and achieve a mean accuracy
+Pereira \etal\ \cite{pereira2012} incorporate semantic priors and achieve a mean accuracy
 of 13.2\% on a one-out-of-12 classification task and 1.94\% on a one-out-of-60
 classification task when attempting to recover the object being observed.
 %
-\citet{miyawaki2008} recover the position of an object in the field of view by
+Miyawaki \etal\ \cite{miyawaki2008} recover the position of an object in the field of view by
 recovering low resolution images from the visual cortex.
 %
 Object classification from video stimuli has not been previously demonstrated.
@@ -64,17 +62,17 @@ Object classification from video stimuli has not been previously demonstrated.
 Recent work on decoding brain activity corresponding to verbs has primarily
 been concerned with identifying active brain regions.
 %
-\citet{kable2006} present the brain regions which attempt to distinguish
+Kable and Chatterjee \cite{kable2006} present the brain regions which attempt to distinguish
 between the different agents of actions and between the different kinds of
 actions they perform.
 %
-\citet{kemmerer2008} analyze the regions of interest (ROI) of brain activity
-associated with orthographic presentation of twenty different verbs in each of
-five different verb classes.
+Kemmerer \etal\ \cite{kemmerer2008} analyze the regions of interest
+(ROI) of brain activity associated with orthographic presentation of
+twenty different verbs in each of five different verb classes.
 %
-\citet{kemmerer2010} analyze the brain activity associated with verbs in
-terms of the motor components of event structure and attempt to localize the
-ROIs of such motor components.
+Kemmerer and Castillo \cite{kemmerer2010} analyze the brain activity
+associated with verbs in terms of the motor components of event
+structure and attempt to localize the ROIs of such motor components.
 %
 While prior work analyzes regions which are activated when subjects are
 presented verbs as stimuli, we recover the content of the resulting brain
@@ -83,8 +81,9 @@ activity by classifying the verb from brain scans.
 Recent work demonstrates the ability to decode the actor of an event using
 personality traits.
 %
-\citet{Hassabis-etal-2013a} demonstrate the ability to recover the identity of
-an imagined actor from that actor's personality.
+Hassabis \etal\ \cite{Hassabis-etal-2013a} demonstrate the ability to
+recover the identity of an imagined actor from that actor's
+personality.
 %
 Subjects are informed of the two distinguishing binary personality traits of
 four actors.
@@ -145,8 +144,9 @@ We discuss a particular kind of compositionality as it applies to sentence
 structure: objects fill argument positions in predicates that combine to form
 the meaning of a sentence.
 %
-\citet{pylkkanen2011grounding} reviews work which attempts to show this kind of
-compositionality using a task called \emph{complement coercion}.
+Bemis and Pylkk{\"{a}}nen \cite{pylkkanen2011grounding} reviews work
+which attempts to show this kind of compositionality using a task
+called \emph{complement coercion}.
 %
 Subjects in this task are presented with sentences whose meaning is richer
 than their syntax.
@@ -178,7 +178,6 @@ cingulate cortex.
 Earlier work on the representation of objects and actions in the brain also
 indicates that these representations may be independent.
 
-\vspace*{-2.4ex}
 \paragraph{Representing objects in the brain}
 %
 Objects are static entities that can be represented by a (mostly) static
@@ -203,7 +202,7 @@ In addition, some regions involved in object representation are
 modality specific.
 %
 For example, spoken-word processing involves the superior temporal lobe (part
-of the auditory associative cortex; \citealp{binder2000human}) while reading
+of the auditory associative cortex \citep{binder2000human}) while reading
 words representing objects activates occipito-temporal regions because of the
 visual processing \citep{puce1996differential}.
 %
@@ -220,7 +219,6 @@ identifying orthographic units.
 The information then moves rostrally to the temporal lobe proper, where
 modality of presentation is no longer relevant \citep{binder2000human}.
 
-\vspace*{-2.4ex}
 \paragraph{Representing actions in the brain}
 %
 Unlike objects, verbs are dynamic entities that unfold in time.
@@ -228,8 +226,9 @@ Unlike objects, verbs are dynamic entities that unfold in time.
 For instance, observing someone pick up a ball takes time as the person's
 movement unfolds.
 %
-Evidence reviewed in \citet{coello2012motor} suggests that action verbs
-activate both semantic units in the temporal cortex and a motor network.
+Evidence reviewed in Coello and Bidet-Ildei \cite{coello2012motor}
+suggests that action verbs activate both semantic units in the
+temporal cortex and a motor network.
 %
 The motor network includes the premotor areas (including the supplementary
 motor area), the primary motor cortex, and the posterior parietal cortex.
@@ -242,8 +241,10 @@ Representation of action may involve `mirror neurons' that have been shown in
 macaque to respond jointly in perception/action tasks, where the similarity of
 the self action is to the perceived action of an observed individual.
 
+\vspace{-1ex}
 \section{Approach}
 \label{sec:approach}
+\vspace{-1ex}
 
 All experiments reported follow the same procedure and are analyzed using the
 same methods and classifiers.
@@ -259,9 +260,11 @@ subjects were asked to think about.
 Multiple runs separated by several minutes of rest, where no data is acquired,
 are performed per subject.
 
-%\subsection{fMRI procedures}
+\subsection{fMRI procedures}
+\vspace{-1ex}
 
-Imaging performed at \Purdue\ used a 3T GE Signa HDx scanner
+% Prevents an overfull hbox
+\hspace{-3.5pt}Imaging performed at Purdue University used a 3T GE Signa HDx scanner
 (Waukesha, Wisconsin) with a Nova Medical (Wilmington, Massachusetts) 16
 channel brain array to collect whole-brain volumes via a gradient-echo EPI
 sequence with 2000ms TR, 22ms TE, 200mm$\times$200mm FOV, and 77$^{\circ}$ flip
@@ -270,16 +273,15 @@ angle.
 We acquired 35 axial slices with a 3.000mm slice thickness using a 64$\times$64
 acquisition matrix resulting in 3.125mm$\times$3.125mm$\times$3.000mm voxels.
 
-% needs work TE, flip angle
-Imaging performed at \StJames\ in Dublin, Ireland, used a 3T
+Imaging performed at St.~James Hospital in Dublin, Ireland, used a 3T
 Phillips Achieva scanner (Best, The Netherlands) using a gradient-echo EPI
 sequence with 2000ms TR and 240mm$\times$240mm FOV.\@
 %
 We acquired 37 axial slices with a 3.550mm slice thickness using an
 80$\times$80 acquisition matrix resulting in
-3.000mm$\times$3.000mm$\times$3.550mm voxels.
+3.000mm$\times$3.000mm$\times$\\3.550mm voxels.
 
-%\subsection{fMRI processing}
+\subsection{fMRI processing}
 
 Data was acquired in runs, with between three and eight runs per subject per
 experiment, and each axis of variation of each experiment was counterbalanced
@@ -294,18 +296,22 @@ the run and dividing by its variance.
 %
 Because each brain volume has very high dimension, between 143,360 and
 236,800 voxels, we eliminate voxels by computing a per-voxel Fisher score on
-our training set and keeping the 5,000 highest-scoring voxels.
+our training set and keeping the 4,000 highest-scoring voxels.
 %
 The Fisher score of a voxel $v$ for a classification task with $C$~classes
 where each class~$c$ has $n_c$ examples is computed as
 %
 \begin{equation}
   \frac{\displaystyle\sum_{c=1}^C n_c(\mu_{c,v}-\mu)^2}
-       {\displaystyle\sum_{c=1}^C n_c \sigma_{c,v}^2}
+  {\displaystyle\sum_{c=1}^C n_c \sigma_{c,v}^2}
 \end{equation}
 %
 where $\mu_{c,v}$ and $\sigma_{c,v}$ are the per-class per-voxel means and
 variances and $\mu$ is the mean for the entire brain volume.
+%
+The resulting voxels are then analyzed with \emph{Linear Discriminant
+  Dimensionality Reduction} \cite{gu2011linear} which selects a smaller number
+of potentially-relevant voxels.
 %
 A linear SVM classifies the selected voxels.
 
@@ -342,10 +348,11 @@ voxel, and do not perform any dimensionality reduction on the remaining voxels.
 We then perform an eight-fold cross validation as described above for each
 position of the sphere.
 %
-For Experiment~1 we also back-project the SVM coefficients onto the anatomical
-scans---the higher the absolute value of the coefficient the more that voxel
-contributes to the classification performance of the SVM---and use a classifier
-with a different metric, $w(i)^2$, as described by \citet{hanson2009}.
+For Experiment~1 we also back-project the SVM coefficients onto the
+anatomical scans---the higher the absolute value of the coefficient
+the more that voxel contributes to the classification performance of
+the SVM---and use a classifier with a different metric, $w(i)^2$, as
+described by Hanson and Halchenko \cite{hanson2009}.
 
 \section{Experiment 1: Verb Representation}
 \label{sec:experiment1}
@@ -373,7 +380,7 @@ six different verbs (\emph{carry}, \emph{dig}, \emph{hold}, \emph{pick up},
 \emph{put down}, and \emph{walk}).
 %
 Key frames from one clip for each of the six verbs are shown in
-Fig.~\ref{fig:ME-Y2}.
+Figure~\ref{fig:ME-Y2}.
 %
 Despite multiple annotators agreeing on whether a video depicts a verb,
 the task of classifying each clip remains very difficult for human subjects
@@ -383,7 +390,8 @@ We address this problem by presenting, in rapid succession, pairs of video
 clips which depict the same verb and asking the subjects to think about the
 verb that would best describe both videos.
 
-We employed a rapid event-related design similar to that of \citet{just2010}.
+We employed a rapid event-related design similar to that of Just
+\etal\ \cite{just2010}.
 %
 We presented pairs of 2.5s video clips at 12fps, depicting the same
 verb, separated by 0.5s blanking and followed by an average of 4.5s (minimum
@@ -395,20 +403,13 @@ pairs within a run depicted different verbs, randomly counterbalanced.
 Each run comprised 48 stimulus presentations spanning 254 captured brain volumes
 and ended with 24s of fixation.
 %
-Eight runs for each of subjects~1 through~3 were collected at \Purdue.
+Eight runs for each of subjects~1 through~3 and subjects~6 through~10
+were collected at Purdue University.
 %
 Three runs for subject~4 and four runs for subject~5 were collected at
-\StJames.
+St.~James Hospital.
 
-% stuff we intentionally don't discuss
-%  1. how we selected these 6 verbs out of 24
-%  2. the process of human annotation
-%  3. how we selected all of the clips to consider
-%     C-D2b/Countery_Road_{1,2} and
-%     Y2-evaluation/{recognition,{scripted,free-form}-description}
-%  4. machine performance
-
-\begin{figure}[t]
+\begin{sidewaysfigure*}
   \begin{center}
     \setlength{\tabcolsep}{1.5pt}
     \begin{tabular}{@{}ccc@{\hspace{10pt}}ccc@{}}
@@ -439,19 +440,19 @@ Three runs for subject~4 and four runs for subject~5 were collected at
     \end{tabular}
   \end{center}
   \caption{Key frames from sample stimuli for each of the six verbs in
-    Experiment~1.
-  %
-  Example stimulus videos are included in the supplementary material.}
+    Experiment~1.}
   \label{fig:ME-Y2}
-\end{figure}
+\end{sidewaysfigure*}
 
-We performed an eight-fold cross validation (fewer for subjects~4 and~5) for a
-six-way classification task, where runs constituted folds.
+We performed an eight-fold cross validation (fewer for subjects~4
+and~5) for a six-way classification task, where runs constituted
+folds.
 %
-The results are presented in Fig.~\ref{fig:ME-Y2-results}.
+The results are presented in Figure~\ref{fig:ME-Y2-results}.
 %
-The per-subject accuracies, averaged across class and fold, were: 80.73\%,
-87.24\%, 78.91\%, 35.94\%, and 43.75\% (chance 16.66\%).
+The per-subject accuracies, averaged across class and fold, were:
+79.42\%, 88.80\%, 75.00\%, 28.12\%, 35.41\%, 38.28\%, 90.62\%,
+83.85\%, 51.04\%, and 50.78\% (chance 16.66\%).
 %
 Note that the last two were trained on fewer runs than the first three.
 %
@@ -463,19 +464,19 @@ two different fMRI scanners at different locations run by different
 experimenters.
 
 \begin{figure}
-  \begin{center}
-      \includegraphics[width=0.4\textwidth]{ME-Y2-boxplot}
-      \hspace{0.1\textwidth}
-      \includegraphics[width=0.4\textwidth]{ME-Y2-confusion-matrix}
-  \end{center}
+  \centering
+  \hspace{-3.5ex}\includegraphics[width=0.95\textwidth]{ME-Y2-boxplot}\\
+  (a)\\[3ex]
+  \includegraphics[width=0.6\textwidth]{ME-Y2-confusion-matrix}\\
+  (b)\\
   \caption{Results for Experiment~1.
     %
-    (left)~Per-subject classification accuracy on 1-out-of-6 verb classes
+    (a)~Per-subject classification accuracy on 1-out-of-6 verb classes
     averaged across class and fold.
     %
     Horizontal line indicates chance performance, 16.66\%.
     %
-    (right)~Corresponding confusion matrix averaged across subject and fold
+    (b)~Corresponding confusion matrix averaged across subject and fold
     is mostly diagonal, with the highest numbers of errors
     being made distinguishing \emph{hold} and \emph{carry}, two ambiguous
     stimuli.}
@@ -503,15 +504,17 @@ These two cross validations yielded accuracies of 33.59\%
 (subject~1$\mapsto$subject~2) and 41.41\% (subject~2$\mapsto$subject~1),
 averaged across class and fold, where chance again is 16.66\%.
 
-\begin{figure}[t]
-  \includegraphics[height=53pt]{ME-Y2-searchlight-1}
-  \hfill
-  \includegraphics[height=53pt]{ME-Y2-searchlight-2}
-  \caption{(left)~Searchlight analysis for Experiment~1 indicating the
+\begin{figure}
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=0.9\textwidth]{ME-Y2-searchlight-1}\\
+    \includegraphics[width=0.9\textwidth]{ME-Y2-searchlight-2}
+  \end{tabular}
+  \caption{(top)~Searchlight analysis for Experiment~1 indicating the
     classification accuracy of different brain regions on the anatomical scans
     from subject~1, averaged across stimulus, class, and run.
     %
-    (right)~A similar analysis using a $w(i)^2$ metric.}
+    (bottom)~A similar analysis using a $w(i)^2$ metric.}
   \label{fig:ME-Y2-searchlight}
 \end{figure}
 
@@ -522,7 +525,7 @@ We use the accuracy to determine the sensitivity of each voxel and threshold
 upward to less then 5\% of the cross-validation measures.
 %
 These measures are overlaid and (2-stage) registered to MNI152 2mm
-anatomicals shown in Fig.~\ref{fig:ME-Y2-searchlight}(left).
+anatomicals shown in Figure~\ref{fig:ME-Y2-searchlight}(top).
 %
 Notable are visual-pathway areas (lateral occipital-LO, lingual gyrus-LG, and
 fusiform gyrus) as well as prefrontal areas (inferior frontal gyrus, middle
@@ -531,11 +534,12 @@ frontal gyrus, and cingulate) and areas consistent with the `mirror system'
 angular gyrus-AG, and superior parietal lobule-SPL) areas
 \citep{dronkers2004lesion,turken2011neural}.
 %
-Fig.~\ref{fig:ME-Y2-searchlight}(right) shows the decoded ROIs from a similar
-SVM classifier with a different metric, $w(i)^2$ \citep{hanson2009}, showing
-similar brain areas but, due to higher sensitivity, also indicates sub-cortical
-regions (hippocampal) associated with encoding processes not seen with the
-cross-validation accuracy metric.
+Figure~\ref{fig:ME-Y2-searchlight}(bottom) shows the decoded ROIs from
+a similar SVM classifier with a different metric, $w(i)^2$ Hanson and
+Halchenko \cite{hanson2009}, showing similar brain areas but, due to
+higher sensitivity, also indicates sub-cortical regions (hippocampal)
+associated with encoding processes not seen with the cross-validation
+accuracy metric.
 %
 As argued in Section~\ref{sec:compositionality}, lateral-occipital areas are
 involved in visual processing specifically related to language, and the
@@ -565,25 +569,23 @@ each performed with three objects (\emph{chair}, \emph{shirt}, and
 \emph{tortilla}), each performed by four human actors, and each performed on
 either side of the field of view were filmed for this task.
 %
-The verbs were chosen to be discriminable based on features described by
-\citet{kemmerer2008}:
+The verbs were chosen to be discriminable based on features described
+by Kemmerer \etal\ \cite{kemmerer2008}:
 %
 \begin{quote}
-  \vspace{-1ex}
   \begin{tabular}{lrr}
     \emph{leave} & $-$state-change & $-$contact\\
     \emph{fold}  & $+$state-change & $+$contact\\
     \emph{carry} & $-$state-change & $+$contact\\
   \end{tabular}
-  \vspace{-1ex}
 \end{quote}
 %
 \noindent
 %
 Nouns were chosen based on categories found to be easily discriminable
-by \citet{just2010}: \emph{chair} (furniture), \emph{shirt} (clothing), and
-\emph{tortilla} (food) and also selected to allow each verb to be performed
-with each noun.
+by Just \etal\ \cite{just2010}: \emph{chair} (furniture), \emph{shirt}
+(clothing), and \emph{tortilla} (food) and also selected to allow each
+verb to be performed with each noun.
 %
 Because these stimuli are not as ambiguous as the ones from Experiment~1,
 they were not shown in pairs.
@@ -614,7 +616,7 @@ volumes, with eight runs per subject, and ended with 24s of fixation.
 Each run was individually counterbalanced for each of the four conditions
 (verb, object, actor, and mirroring).
 %
-We collected data for three subjects at \Purdue\ but discarded the
+We collected data for three subjects at Purdue University but discarded the
 data for one of the three due to subject motion.
 %
 One subject did eight runs without exiting the scanner.
@@ -625,54 +627,6 @@ cross-session registration.
 All subjects were aware of the experiment design, were informed of the intended
 depiction of each stimulus prior to the scan, and were instructed to think of
 the intended depiction after each presentation.
-
-\begin{figure}
-  \begin{center}
-    \setlength{\tabcolsep}{1pt}
-    \begin{tabular}{@{}ccc@{\hspace{10pt}}ccc@{\hspace{10pt}}ccc@{}}
-      \includegraphics[width=0.1\textwidth]{carry-chair-1}&
-      \includegraphics[width=0.1\textwidth]{carry-chair-2}&
-      \includegraphics[width=0.1\textwidth]{carry-chair-3}&
-      \includegraphics[width=0.1\textwidth]{carry-shirt-1}&
-      \includegraphics[width=0.1\textwidth]{carry-shirt-2}&
-      \includegraphics[width=0.1\textwidth]{carry-shirt-3}&
-      \includegraphics[width=0.1\textwidth]{carry-tortilla-1}&
-      \includegraphics[width=0.1\textwidth]{carry-tortilla-2}&
-      \includegraphics[width=0.1\textwidth]{carry-tortilla-3}\\[-0.8ex]
-      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{carry chair}}&
-      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{carry shirt}}&
-      \multicolumn{3}{c}{\emph{carry tortilla}}\\[0.5ex]
-      \includegraphics[width=0.1\textwidth]{fold-chair-1}&
-      \includegraphics[width=0.1\textwidth]{fold-chair-2}&
-      \includegraphics[width=0.1\textwidth]{fold-chair-3}&
-      \includegraphics[width=0.1\textwidth]{fold-shirt-1}&
-      \includegraphics[width=0.1\textwidth]{fold-shirt-2}&
-      \includegraphics[width=0.1\textwidth]{fold-shirt-3}&
-      \includegraphics[width=0.1\textwidth]{fold-tortilla-1}&
-      \includegraphics[width=0.1\textwidth]{fold-tortilla-2}&
-      \includegraphics[width=0.1\textwidth]{fold-tortilla-3}\\[-0.8ex]
-      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{fold chair}}&
-      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{fold shirt}}&
-      \multicolumn{3}{c}{\emph{fold tortilla}}\\[0.5ex]
-      \includegraphics[width=0.1\textwidth]{leave-chair-1}&
-      \includegraphics[width=0.1\textwidth]{leave-chair-2}&
-      \includegraphics[width=0.1\textwidth]{leave-chair-3}&
-      \includegraphics[width=0.1\textwidth]{leave-shirt-1}&
-      \includegraphics[width=0.1\textwidth]{leave-shirt-2}&
-      \includegraphics[width=0.1\textwidth]{leave-shirt-3}&
-      \includegraphics[width=0.1\textwidth]{leave-tortilla-1}&
-      \includegraphics[width=0.1\textwidth]{leave-tortilla-2}&
-      \includegraphics[width=0.1\textwidth]{leave-tortilla-3}\\[-0.8ex]
-      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{leave chair}}&
-      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{leave shirt}}&
-      \multicolumn{3}{c}{\emph{leave tortilla}}
-    \end{tabular}
-  \end{center}
-  \caption{Key frames from sample stimuli in Experiment~2.
-    %
-    Example stimulus videos are included in the supplementary material.}
-  \label{fig:9events}
-\end{figure}
 
 This experimental design supports the following classification analyses:
 %
@@ -701,21 +655,22 @@ The analysis performed was exactly the same as that for Experiment~1,
 including eight-fold cross validation for each of our analyses, where runs
 constituted folds.
 %
-Fig.~\ref{fig:9events-results} presents an overview of the results along with
-per-subject classification accuracies and aggregate confusion matrices for the
+Figures~\ref{fig:9events-results} through~\ref{fig:9events-results3}
+present an overview of the results along with per-subject
+classification accuracies and aggregate confusion matrices for the
 each of the above analyses.
 %
 Note that we achieve significantly above-chance performance on all six analyses
 with only a single fold for a single subject across all six analyses
 performing below chance.
 
-\textbf{Verb} performance is well above chance (76.22\%, chance 11.11\%).
+\textbf{Verb} performance is well above chance (78.91\%, chance 11.11\%).
 %
 This replicates Experiment~1 with different videos and a new verb and adds to
 the evidence that brain activity corresponding to verbs can reliably be decoded
 from fMRI scans.
 %
-\textbf{Object} performance was significant as well (60.42\%, chance 33.33\%).
+\textbf{Object} performance was significant as well (59.79\%, chance 33.33\%).
 %
 Given neural activation, we can decode which object the subjects are thinking
 about.
@@ -744,31 +699,36 @@ jointly classify the object and the verb.
 %
 This seems to not be the case.
 %
-The accuracy of \textbf{event} is almost identical to the joint independent
-accuracy of \textbf{verb} and \textbf{object}:
-$\text{0.5538}\approx\text{0.5289}=\text{0.8212}\times\text{0.6441}$
-(subject~1) and
-$\text{0.4097}\approx\text{0.3967}=\text{0.7031}\times\text{0.5642}$
-(subject~2), indicating that the representation of these verbs is independent
-of the objects that the verbs are being performed with.
+The accuracy of \textbf{event} is almost identical to the joint
+independent accuracy of \textbf{verb} and \textbf{object}:
+$\text{49.58}\approx\text{47.19}=\text{78.92}\times\text{59.80}$,
+indicating that the representation of these verbs is independent of
+the objects that the verbs are being performed with.
 %
 This is also confirmed by the confusion matrix for \textbf{event} in
-Fig.~\ref{fig:9events-results}(c) which remains diagonal.
+Figure~\ref{fig:9events-results3} which remains diagonal.
 
 To decode complex brain activity corresponding to an entire sentence, we can
 combine \textbf{actor}, \textbf{verb}, \textbf{object}, and \textbf{direction}
 or \textbf{location}.
 %
 We perform significantly above chance on this one-out-of-72
-(4$\times$3$\times$3$\times$2) classification:
+(4$\times$3$\times$3$\times$2) classification for each of the subjects:
 %
-\begin{equation*}
-  \begin{array}{@{}lr@{}}
-\text{0.3281}\times\text{0.8212}\times\text{0.6441}\times(\frac{\text{1}}{\text{3}}\times\text{0.6823}+\frac{\text{2}}{\text{3}}\times\text{0.8333})=\textbf{0.1359}\gg\textbf{0.0139}=\frac{\text{1}}{\text{72}}
-&\text{(subject~1)}\\[0.5ex]
-\text{0.3281}\times\text{0.7031}\times\text{0.5642}\times(\frac{\text{1}}{\text{3}}\times\text{0.6458}+\frac{\text{2}}{\text{3}}\times\text{0.7170})=\textbf{0.0902}\gg\textbf{0.0139}=\frac{\text{1}}{\text{72}}&\text{(subject~2)}
-  \end{array}
-\end{equation*}
+\begin{small}
+  \begin{equation*}
+      \arraycolsep=2pt
+    \begin{array}{@{}lclclclclclclclcc@{}}
+\text{0.3038}\times\text{0.7760}\times\text{0.5538}\times(\frac{\text{2}}{\text{3}}\times\text{0.7986}+\frac{\text{1}}{\text{3}}\times\text{0.6979})=\textbf{0.0999}\gg\textbf{0.0139}=\frac{\text{1}}{\text{72}}\\[0.5ex]
+\text{0.3142}\times\text{0.6736}\times\text{0.5417}\times(\frac{\text{2}}{\text{3}}\times\text{0.6771}+\frac{\text{1}}{\text{3}}\times\text{0.6146})=\textbf{0.0752}\gg\textbf{0.0139}=\frac{\text{1}}{\text{72}}\\[0.5ex]
+\text{0.3559}\times\text{0.8299}\times\text{0.6233}\times(\frac{\text{2}}{\text{3}}\times\text{0.8507}+\frac{\text{1}}{\text{3}}\times\text{0.6771})=\textbf{0.1459}\gg\textbf{0.0139}=\frac{\text{1}}{\text{72}}\\[0.5ex]
+\text{0.3524}\times\text{0.8160}\times\text{0.6597}\times(\frac{\text{2}}{\text{3}}\times\text{0.7760}+\frac{\text{1}}{\text{3}}\times\text{0.7344})=\textbf{0.1446}\gg\textbf{0.0139}=\frac{\text{1}}{\text{72}}\\[0.5ex]
+\text{0.3316}\times\text{0.8698}\times\text{0.6632}\times(\frac{\text{2}}{\text{3}}\times\text{0.8524}+\frac{\text{1}}{\text{3}}\times\text{0.7552})=\textbf{0.1569}\gg\textbf{0.0139}=\frac{\text{1}}{\text{72}}\\[0.5ex]
+\text{0.3229}\times\text{0.7760}\times\text{0.5747}\times(\frac{\text{2}}{\text{3}}\times\text{0.7917}+\frac{\text{1}}{\text{3}}\times\text{0.7969})=\textbf{0.1143}\gg\textbf{0.0139}=\frac{\text{1}}{\text{72}}\\[0.5ex]
+\text{0.3524}\times\text{0.7830}\times\text{0.5694}\times(\frac{\text{2}}{\text{3}}\times\text{0.8090}+\frac{\text{1}}{\text{3}}\times\text{0.7135})=\textbf{0.1221}\gg\textbf{0.0139}=\frac{\text{1}}{\text{72}}\\[0.5ex]
+    \end{array}
+  \end{equation*}
+\end{small}
 %
 (Since \textbf{direction} applied to \emph{carry} and \emph{leave} while
 \textbf{location} disjointly applied to \emph{fold}, this yields a binary
@@ -777,64 +737,12 @@ classification task across all verbs.)
 Thus we are able to classify \textbf{\emph{entire sentences}} compositionally
 from their individual words.
 
-\begin{figure}
-  \begin{center}
-    \begin{tabular}{rcccccc}
-      \raisebox{8ex}{(a)}&\multicolumn{6}{c}{\begin{tabular}[b]{ccccccc}
-          \toprule
-          &\multicolumn{6}{c}{\textbf{Classification Accuracy}}\\
-      \cmidrule(l){2-7}
-      \textbf{Subject}
-      &\textbf{event}&\textbf{verb}&\textbf{object}&\textbf{actor}&
-      \textbf{direction}&\textbf{location}\\
-      \cmidrule{1-1}
-      \cmidrule(l){2-7}
-      1&55.38\%&82.12\%&64.41\%&32.81\%&83.33\%&68.23\%\\
-      2&40.97\%&70.31\%&56.42\%&32.81\%&71.70\%&64.58\%\\[0.4ex]
-      chance&11.11\%&33.33\%&33.33\%&25.00\%&50.00\%&50.00\%\\\bottomrule
-    \end{tabular}}\\[1ex]
-      \raisebox{30pt}{(b)}&
-      \includegraphics[width=0.12\textwidth]{9events-event-boxplot}&
-      \includegraphics[width=0.12\textwidth]{9events-verb-boxplot}&
-      \includegraphics[width=0.12\textwidth]{9events-object-boxplot}&
-      \includegraphics[width=0.12\textwidth]{9events-actor-boxplot}&
-      \includegraphics[width=0.12\textwidth]{9events-direction-boxplot}&
-      \includegraphics[width=0.12\textwidth]{9events-location-boxplot}\\
-
-      \raisebox{13pt}{(c)}&
-      \includegraphics[width=0.12\textwidth]{9events-event-confusion-matrix}&
-      \includegraphics[width=0.12\textwidth]{9events-verb-confusion-matrix}&
-      \includegraphics[width=0.12\textwidth]{9events-object-confusion-matrix}&
-      \includegraphics[width=0.12\textwidth]{9events-actor-confusion-matrix}&
-      \includegraphics[width=0.12\textwidth]{9events-direction-confusion-matrix}&
-      \includegraphics[width=0.12\textwidth]{9events-location-confusion-matrix}\\
-      &\textbf{event}&\textbf{verb}&\textbf{object}&\textbf{actor}&\textbf{direction}&
-      \textbf{location}
-    \end{tabular}
-  \end{center}
-  \caption{Results for Experiment~2.
-    %
-    (a)~Per-subject mean classification accuracies averaged across fold.
-    %
-    Note that all six analyses perform above chance.
-    %
-    (b)~Per-subject classification accuracies showing the means and variances
-    of performance across the different folds for each class.
-    %
-    The horizontal line indicates chance performance.
-    %
-    (c)~Corresponding confusion matrices, averaged across subject and fold.
-    %
-    Note that they are mostly diagonal.}
-  \label{fig:9events-results}
-\end{figure}
-
 To locate regions of the brain used in the previous analyses, we applied the
 same searchlight linear-SVM method that was performed in Experiment~1 to
 subject~1's data from this experiment and identified similar areas in
 visual-pathway, parietal, and prefrontal areas.
 %
-The resulting ROIs, shown in Fig.~\ref{fig:9events-searchlight}, are overlaid
+The resulting ROIs, shown in Figure~\ref{fig:9events-searchlight}, are overlaid
 and color coded according to the specific visual feature being decoded.
 %
 In general, it is clear that the decoding is sensitive to action/category
@@ -850,18 +758,8 @@ visual cortex.
 \textbf{Object} activity is present in the temporal cortex, and agrees with
 previous work on object-category encoding \citep{Gazzaniga2008}.
 
-\begin{figure}[t]
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{9events-searchlight}
-  \end{center}
-  \caption{Searchlight analysis for Experiment~2 indicating the classification
-    accuracy of different brain regions on the anatomical scans from subject~1
-    averaged across stimulus, class, and run.}
-  \label{fig:9events-searchlight}
-\end{figure}
-
 \section{Conclusion}
-\label{sec:conclusion}
+\label{sec:conclusion-fmri}
 
 %
 We have demonstrated that it is possible to read a subject's brain activity and
@@ -877,3 +775,126 @@ one another.
 %
 These results indicate that representations which attempt to decompose meaning
 into constituents may have a neural basis.
+
+\begin{landscape}
+  \begin{figure}
+    \centering
+    \setlength{\tabcolsep}{1pt}
+    \begin{tabular}{@{}ccc@{\hspace{10pt}}ccc@{\hspace{10pt}}ccc@{}}
+      \includegraphics[width=0.15\textwidth]{carry-chair-1}&
+      \includegraphics[width=0.15\textwidth]{carry-chair-2}&
+      \includegraphics[width=0.15\textwidth]{carry-chair-3}&
+      \includegraphics[width=0.15\textwidth]{carry-shirt-1}&
+      \includegraphics[width=0.15\textwidth]{carry-shirt-2}&
+      \includegraphics[width=0.15\textwidth]{carry-shirt-3}&
+      \includegraphics[width=0.15\textwidth]{carry-tortilla-1}&
+      \includegraphics[width=0.15\textwidth]{carry-tortilla-2}&
+      \includegraphics[width=0.15\textwidth]{carry-tortilla-3}\\[-0.8ex]
+      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{carry chair}}&
+      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{carry shirt}}&
+      \multicolumn{3}{c}{\emph{carry tortilla}}\\[0.5ex]
+      \includegraphics[width=0.15\textwidth]{fold-chair-1}&
+      \includegraphics[width=0.15\textwidth]{fold-chair-2}&
+      \includegraphics[width=0.15\textwidth]{fold-chair-3}&
+      \includegraphics[width=0.15\textwidth]{fold-shirt-1}&
+      \includegraphics[width=0.15\textwidth]{fold-shirt-2}&
+      \includegraphics[width=0.15\textwidth]{fold-shirt-3}&
+      \includegraphics[width=0.15\textwidth]{fold-tortilla-1}&
+      \includegraphics[width=0.15\textwidth]{fold-tortilla-2}&
+      \includegraphics[width=0.15\textwidth]{fold-tortilla-3}\\[-0.8ex]
+      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{fold chair}}&
+      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{fold shirt}}&
+      \multicolumn{3}{c}{\emph{fold tortilla}}\\[0.5ex]
+      \includegraphics[width=0.15\textwidth]{leave-chair-1}&
+      \includegraphics[width=0.15\textwidth]{leave-chair-2}&
+      \includegraphics[width=0.15\textwidth]{leave-chair-3}&
+      \includegraphics[width=0.15\textwidth]{leave-shirt-1}&
+      \includegraphics[width=0.15\textwidth]{leave-shirt-2}&
+      \includegraphics[width=0.15\textwidth]{leave-shirt-3}&
+      \includegraphics[width=0.15\textwidth]{leave-tortilla-1}&
+      \includegraphics[width=0.15\textwidth]{leave-tortilla-2}&
+      \includegraphics[width=0.15\textwidth]{leave-tortilla-3}\\[-0.8ex]
+      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{leave chair}}&
+      \multicolumn{3}{c@{\hspace{10pt}}}{\emph{leave shirt}}&
+      \multicolumn{3}{c}{\emph{leave tortilla}}
+    \end{tabular}
+    \caption{Key frames from sample stimuli in Experiment~2.}
+    \label{fig:9events}
+  \end{figure}
+\end{landscape}
+
+\begin{figure}
+  \centering
+  \begin{tabular}[b]{ccccccc}
+    \toprule
+    &\multicolumn{6}{c}{\textbf{Classification Accuracy}}\\
+    \cmidrule(l){2-7}
+    \textbf{Subject}
+    &\textbf{event}&\textbf{verb}&\textbf{object}&\textbf{actor}&
+    \textbf{direction}&\textbf{location}\\
+    \cmidrule{1-1}
+    \cmidrule(l){2-7}
+    1&52.25\%&77.60\%&55.38\%&30.38\%&79.86\%&69.79\%\\
+    2&38.88\%&67.36\%&54.16\%&31.42\%&67.70\%&61.45\%\\
+    3&53.99\%&82.98\%&62.32\%&35.59\%&85.06\%&67.70\%\\
+    4&54.51\%&81.59\%&65.97\%&35.24\%&77.60\%&73.43\%\\
+    5&59.54\%&86.97\%&66.31\%&33.15\%&85.24\%&75.52\%\\
+    6&46.18\%&77.60\%&57.46\%&32.29\%&79.16\%&79.68\%\\
+    7&41.66\%&78.29\%&56.94\%&35.24\%&80.90\%&71.35\%\\[0.4ex]
+    chance&11.11\%&33.33\%&33.33\%&25.00\%&50.00\%&50.00\%\\\bottomrule
+  \end{tabular}
+  \caption{Per-subject mean classification accuracies
+    averaged across fold for Experiment~2.
+    %
+    Note that all six analyses perform above chance.}
+  \label{fig:9events-results}
+\end{figure}
+
+\begin{landscape}
+  \begin{figure}
+    \centering
+    \begin{tabular}{ccc}
+      \includegraphics[width=0.45\textwidth]{9events-event-boxplot}&
+      \includegraphics[width=0.45\textwidth]{9events-verb-boxplot}&
+      \includegraphics[width=0.45\textwidth]{9events-object-boxplot}\\
+      \includegraphics[width=0.45\textwidth]{9events-actor-boxplot}&
+      \includegraphics[width=0.45\textwidth]{9events-direction-boxplot}&
+      \includegraphics[width=0.45\textwidth]{9events-location-boxplot}\\
+    \end{tabular}
+    \caption{Per-subject classification accuracies for Experiment~2 showing
+      the means and variances of performance across the different folds
+      for each class.
+      %
+      The horizontal line indicates chance performance.}
+    \label{fig:9events-results2}
+  \end{figure}
+\end{landscape}
+
+\begin{figure}
+  \begin{center}
+    \begin{tabular}{ccc}
+      \includegraphics[width=0.25\textwidth]{9events-event-confusion-matrix}&
+      \includegraphics[width=0.25\textwidth]{9events-verb-confusion-matrix}&
+      \includegraphics[width=0.25\textwidth]{9events-object-confusion-matrix}\\
+      \textbf{event}&\textbf{verb}&\textbf{object}\\
+      \includegraphics[width=0.25\textwidth]{9events-actor-confusion-matrix}&
+      \includegraphics[width=0.25\textwidth]{9events-direction-confusion-matrix}&
+      \includegraphics[width=0.25\textwidth]{9events-location-confusion-matrix}\\
+      \textbf{actor}&\textbf{direction}&\textbf{location}
+    \end{tabular}
+  \end{center}
+  \caption{Confusion matrices for Experiment~2, averaged across subject and fold.
+    %
+    Note that they are mostly diagonal.}
+  \label{fig:9events-results3}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{9events-searchlight}
+  \end{center}
+  \caption{Searchlight analysis for Experiment~2 indicating the classification
+    accuracy of different brain regions on the anatomical scans from subject~1
+    averaged across stimulus, class, and run.}
+  \label{fig:9events-searchlight}
+\end{figure}

@@ -1,7 +1,8 @@
 \chapter{Seeing Unseeability to See the Unseeable}
+\label{chapter:acs2012a}
 
 \section{Introduction}
-\label{sec:introduction}
+\label{sec-ll2:introduction}
 
 \begin{quote}
   [T]here are known knowns; there are things we know we know.
@@ -117,16 +118,16 @@ difficult---occlusion, luminance variation, and a distinct paucity of features
 all encumber the process---the computational problem itself affords a richness
 and complexity that is not readily apparent.
 
-We present methods for seeing the unseeable (in Section~\ref{sec:structure})
-and seeing unseeability (in Section~\ref{sec:visibility}) based on precise
+We present methods for seeing the unseeable (in Section~\ref{sec-ll2:structure})
+and seeing unseeability (in Section~\ref{sec-ll2:visibility}) based on precise
 computation of the maximum-likelihood structure estimate.
 %
-Section~\ref{sec:confidence} presents a rational basis for determining
+Section~\ref{sec-ll2:confidence} presents a rational basis for determining
 confidence in one's structure estimate despite unseeability based on precise
 computation of the amount of evidence needed to override a uniform prior on the
 unseeable.
 %
-Section~\ref{sec:integration} presents an active-vision decision-making
+Section~\ref{sec-ll2:integration} presents an active-vision decision-making
 process for determining rational behavior in the presence of unseeability based
 on precise computation of which of several available perception-enhancing
 actions one should take to maximally improve the confidence in one's structure
@@ -135,14 +136,14 @@ estimate.
 Such capability is bootstrapped by our framework's capacity to integrate
 evidence from different views, both \emph{imagined} and \emph{actual}.
 %
-Section~\ref{sec:language} further highlights the elegance of our framework by
+Section~\ref{sec-ll2:language} further highlights the elegance of our framework by
 demonstrating the integration of evidence \emph{across} modalities; using
 natural-language descriptions to aid in resolving ambiguities in structure
 estimation.
 
 \par\vspace{-1ex}
 \section{Structure Estimation}
-\label{sec:structure}
+\label{sec-ll2:structure}
 
 Speech recognizers use a human language model, on utterances in a generative
 linguistic domain, to improve recognition accuracy over the raw recognition
@@ -204,7 +205,7 @@ information.
     variables~(a).
     %
     This process is mediated through the constraints shown in
-    Figure~\protect\ref{fig:grammar-assemblies}(a).
+    Figure~\protect\ref{fig-ll2:grammar-assemblies}(a).
     %
     (a)~The Boolean log-feature variables~$Z^+_q$, $Z^-_q$, $Z^u_q$, $Z^v_q$,
     and~$Z^w_q$ encode the presence of the specified image features for grid
@@ -218,7 +219,7 @@ information.
     (c)~Example of the underlying symbolic grid of a \LincolnLog\
     assembly.}
   %
-  \label{fig:lincoln-logs}
+  \label{fig-ll2:lincoln-logs}
   \par\vspace*{-2.5ex}
 \end{figure}
 
@@ -227,22 +228,22 @@ assembly toy with a small part inventory, namely, 1-, 2-, and 3-notch
 logs.
 %
 In a grammatical \LincolnLog\ assembly, all logs lie on a symbolic grid imposed
-over the structure (Figure~\ref{fig:lincoln-logs}c).
+over the structure (Figure~\ref{fig-ll2:lincoln-logs}c).
 %
 The structure of an assembly can be completely and unambiguously described by
 specifying the occupancy at each grid position
-(Figure~\ref{fig:lincoln-logs}b).
+(Figure~\ref{fig-ll2:lincoln-logs}b).
 %
 Not all possible occupancy descriptions denote stable, physically realizable
 structures.
 %
 The space of valid structures can be specified by local constraints on the
 occupancy of adjacent grid positions, as shown in
-Figure~\ref{fig:grammar-assemblies}(a).
+Figure~\ref{fig-ll2:grammar-assemblies}(a).
 %
 Enforcing these constraints over the entire structure renders some assemblies
 grammatical and others ungrammatical, as shown in
-Figure~\ref{fig:grammar-assemblies}(b).
+Figure~\ref{fig-ll2:grammar-assemblies}(b).
 
 \begin{figure}
   \centering
@@ -274,7 +275,7 @@ Figure~\ref{fig:grammar-assemblies}(b).
     (b, bottom)~Examples of structures that do not satisfy the grammar, because
     of unsupported logs.}
   %
-  \label{fig:grammar-assemblies}
+  \label{fig-ll2:grammar-assemblies}
   %
   \par\vspace*{-3ex}
 \end{figure}
@@ -292,11 +293,11 @@ to encode the presence of log-segment features in the image.
 %
 There is one instance of each such variable, $Z^+_q$, $Z^-_q$, $Z^u_q$,
 $Z^v_q$, and~$Z^w_q$, for each grid position~$q$, as shown in
-Figure~\ref{fig:lincoln-logs}(a).
+Figure~\ref{fig-ll2:lincoln-logs}(a).
 %
 We also construct a discrete random variable~$Z_q$ for each grid position~$q$
 that ranges over its possible occupancies in the structure, as shown in
-Figure~\ref{fig:lincoln-logs}(b).
+Figure~\ref{fig-ll2:lincoln-logs}(b).
 %
 In the exposition below, we use~$\mathbf{Z}^+$, $\mathbf{Z}^-$, $\mathbf{Z}^u$,
 $\mathbf{Z}^v$, $\mathbf{Z}^w$, and~$\mathbf{Z}$ to denote the collections of
@@ -315,7 +316,7 @@ mutually constraints the log-feature and log-occupancy variables, using
 Algorithm~\ref{alg:structure}.
 %
 The constraints are formalizations of the world knowledge in
-Figure~\ref{fig:grammar-assemblies}(a).
+Figure~\ref{fig-ll2:grammar-assemblies}(a).
 %
 Because the image evidence as encoded in the log-feature variables is noisy,
 unreliable, and incomplete (due to occlusion), we cannot treat this as a
@@ -342,7 +343,7 @@ The random variables that correspond to log features are marginalized
   a joint distribution $\Pr(A,B)$ as a two-dimensional table with rows for
   the~$A$ entries and columns for the~$B$ entries.
   %
-  The values of $\Pr(A)$ were derived by summing along the columns to yield a
+  The values of $\Pr(A)$ were derived by summing down the columns to yield a
   new row at the bottom \emph{margin} of the table.
   %
   The values of $\Pr(B)$ were derived by summing along the rows to yield a
@@ -352,7 +353,7 @@ The random variables that correspond to log features are marginalized
   probabilities and the derivation process as \emph{marginalization}.}
 and the resulting marginal distribution is conditioned on the language
 model~$\Phi$ to enforce the constraints from
-Figure~\ref{fig:grammar-assemblies}(a).
+Figure~\ref{fig-ll2:grammar-assemblies}(a).
 %
 Finally, the assignment to the collection, $\mathbf{Z}$, of random
 variables~$Z_q$, that maximizes this conditional marginal probability is
@@ -380,7 +381,7 @@ possible values, the total number of possibilities ($7^8 \approx 5 \times
 %
 This is due to the generative nature of the \LincolnLog\ domain.
 %
-We illustrate this point further with Figure~\ref{fig:complexity}(c), where we
+We illustrate this point further with Figure~\ref{fig-ll2:complexity}(c), where we
 enumerate the number of possible structures and how many of such are valid
 given our system of constraints, for a few relatively small grid sizes.
 
@@ -430,14 +431,14 @@ given our system of constraints, for a few relatively small grid sizes.
     with a rotating head to image the assembly from different viewpoints and a
     robot arm to disassemble the assembly.}
   %
-  \label{fig:complexity}
+  \label{fig-ll2:complexity}
   %
   \par\vspace*{-5ex}
 \end{figure}
 
 \begin{algorithm}[t]
   \caption{The structure-estimation algorithm as described in
-    Section~\ref{sec:structure}.}
+    Section~\ref{sec-ll2:structure}.}
   %
   \SetKwData{Feature}{log-feature}
   \SetKwData{Features}{log-features}
@@ -509,7 +510,7 @@ process.
 
 \par\vspace{-1ex}
 \section{Visibility Estimation}
-\label{sec:visibility}
+\label{sec-ll2:visibility}
 
 Image evidence for the presence or absence of each log feature is obtained
 independently.
@@ -525,7 +526,7 @@ This assumes that the specific log feature is visible in the image, and not
 occluded by portions of the assembly between the camera and that log feature.
 %
 We show example visibility of log-end and log-segment features for a simple
-\LincolnLog\ assembly in Figure~\ref{fig:complexity}(a,b).
+\LincolnLog\ assembly in Figure~\ref{fig-ll2:complexity}(a,b).
 %
 When the log feature~$f$, a member of the set $\{+,-,u,v,w\}$ of the five
 feature classes defined above, at a position~$q$, is not visible, the prior can
@@ -641,7 +642,7 @@ determine occupancy of the corresponding grid positions.
 
 \begin{algorithm}[t]
   \caption{The visibility-estimation algorithm as described in
-    Section~\ref{sec:visibility}, using Algorithm~\ref{alg:structure}.}
+    Section~\ref{sec-ll2:visibility}, using Algorithm~\ref{alg:structure}.}
   %
   \SetKwData{Feature}{log-feature}
   \SetKwData{Features}{log-features}
@@ -694,7 +695,7 @@ above process.
 
 \par\vspace{-1ex}
 \section{Structure-Estimation Confidence}
-\label{sec:confidence}
+\label{sec-ll2:confidence}
 
 While the structure-estimation process can determine the occupancy of a small
 number of grid positions when only a single set of occupancy values is
@@ -814,13 +815,13 @@ process up.
 
 \par\vspace{-1ex}
 \section{Gathering Additional Evidence}
-\label{sec:integration}
+\label{sec-ll2:integration}
 
 Structure estimation can be made more reliable by integrating multiple sources
 of image evidence.
 %
 We perform structure estimation in a robotic environment, illustrated in
-Figure~\ref{fig:complexity}(d), that facilities automatically gathering
+Figure~\ref{fig-ll2:complexity}(d), that facilitates automatically gathering
 multiple sources of image evidence as needed.
 %
 This workspace is imaged by a camera mounted on a pendulum arm that can rotate
@@ -877,7 +878,7 @@ We do this by omitting random variables associated with log features
 for logs that are known to have been removed in the disassembly process and not
 instantiating constraints that mention such omitted random variables.
 
-We can combine the techniques from Section~\ref{sec:confidence} with these
+We can combine the techniques from Section~\ref{sec-ll2:confidence} with these
 techniques to yield an active-vision \cite{Bajcsy1988} approach to producing a
 confident and correct structure estimate.
 %
@@ -973,7 +974,7 @@ between the available actions.
 
 \par\vspace{-1ex}
 \section{Natural Language}
-\label{sec:language}
+\label{sec-ll2:language}
 
 An interesting feature of our framework is that it allows for elegant inclusion
 of information from other modalities.
@@ -1069,7 +1070,7 @@ image evidence for log features from those views, we compute
 \end{equation*}
 %
 An example of how such an extension improves results is shown in
-Figure~\ref{fig:language}.
+Figure~\ref{fig-ll2:language}.
 %
 The key idea here is that the CSP is a modality-neutral internal mental
 representation that can be fed information derived by vision, language, or
@@ -1087,7 +1088,7 @@ or speech for language, and motor-control primitives for proprioception.
 
 \par\vspace{-1ex}
 \section{Results}
-\label{sec:results}
+\label{sec-ll2:results}
 
 We gathered a corpus of five different images of each of~32 different structures,
 each from a different viewpoint, for a total of~160 images.
@@ -1120,7 +1121,7 @@ among various pairs of the~32 distinct structures.
     Note that our active-vision processes consistently reduce estimation
     error.}
   %
-  \label{fig:visibility}
+  \label{fig-ll2:visibility}
   %
   \par\vspace*{-6ex}
 \end{figure}
@@ -1148,7 +1149,7 @@ the estimated structure counts as $\min(r,s)$ errors.
 We then compute an error histogram of the number of images with fewer than~$t$
 errors.
 %
-Figure~\ref{fig:visibility}(a)~shows the error histograms for manual visibility
+Figure~\ref{fig-ll2:visibility}(a)~shows the error histograms for manual visibility
 annotation and automatic visibility estimation.
 %
 Note that the latter performs as well as the former---our automatic
@@ -1188,7 +1189,7 @@ This resulted in only three false positives and seven false negatives on our cor
     Overlayed log color indicates correct (green) or incorrect (red)
     estimation of log occupancies.}
   %
-  \label{fig:results}
+  \label{fig-ll2:results}
   %
   \par\vspace*{-3ex}
 \end{figure}
@@ -1223,17 +1224,17 @@ viewpoint as potential actions and perform our active-vision process.
 For each of these, we computed the error histogram at the termination of the
 active-vision process.
 %
-Figure~\ref{fig:visibility}(b)~shows the error histograms for each of the
+Figure~\ref{fig-ll2:visibility}(b)~shows the error histograms for each of the
 active-vision processes together with the error histogram for baseline
 structure estimation from a single view on this subset of~90 images.
 %
-Figure~\ref{fig:results} shows the final estimated structure when performing
-each of the four processes from Figure~\ref{fig:visibility}(b)~on the same
+Figure~\ref{fig-ll2:results} shows the final estimated structure when performing
+each of the four processes from Figure~\ref{fig-ll2:visibility}(b)~on the same
 initial image.
 %
 Note that our active-vision processes consistently reduce estimation error.
 
-We demonstrate natural-language integration in Figure~\ref{fig:language}.
+We demonstrate natural-language integration in Figure~\ref{fig-ll2:language}.
 %
 In (a), structure estimation is performed on a single view, which due to
 occlusion, is unable to determine the correct structure.
@@ -1290,14 +1291,14 @@ sufficient to correctly estimate the structure (d).
     Overlayed log color indicates correct (green) or incorrect (red) estimation
     of log occupancies.}
   %
-  \label{fig:language}
+  \label{fig-ll2:language}
   %
   \par\vspace*{-3ex}
 \end{figure}
 
 \par\vspace{-1ex}
 \section{Related Work}
-\label{sec:related}
+\label{sec-ll2:related}
 
 Our work shares three overall objectives with prior work:
 estimating 3D structure from 2D images, determining when there is
@@ -1361,7 +1362,7 @@ with the action taken.
 
 \par\vspace{-1ex}
 \section{Conclusion}
-\label{sec:conclusion}
+\label{sec-ll2:conclusion}
 
 We have presented a general framework for (a)~seeing the unseeable, (b)~seeing
 unseeability, (c)~a rational basis for determining confidence in what one sees,
@@ -1433,7 +1434,7 @@ However, the real world is highly complex, metric, and noisy.
 Even the simple world of \LincolnLogs\ has a huge number of distinct
 propositions~$Z_q$, $Z^+_q$, $Z^-_q$, $Z^u_q$, $Z^v_q$, and~$Z^w_q$ that
 combine to yield an astronomical number of possible worlds as illustrated in
-Figure~\ref{fig:complexity}(c).
+Figure~\ref{fig-ll2:complexity}(c).
 %
 The relationships between these propositions are governed by a metric physical
 process, namely projection of the 3D world onto the 2D image plane, not a
