@@ -655,9 +655,9 @@ The analysis performed was exactly the same as that for Experiment~1,
 including eight-fold cross validation for each of our analyses, where runs
 constituted folds.
 %
-Figures~\ref{fig:9events-results} through~\ref{fig:9events-results3}
-present an overview of the results along with per-subject
-classification accuracies and aggregate confusion matrices for the
+Table~\ref{tab:9events-results} and Figures~\ref{fig:9events-results2}
+and~\ref{fig:9events-results3} present an overview of the results along with
+per-subject classification accuracies and aggregate confusion matrices for the
 each of the above analyses.
 %
 Note that we achieve significantly above-chance performance on all six analyses
@@ -823,7 +823,12 @@ into constituents may have a neural basis.
   \end{figure}
 \end{landscape}
 
-\begin{figure}
+\begin{table*}
+  \caption{Per-subject mean classification accuracies
+    averaged across fold for Experiment~2.
+    %
+    Note that all six analyses perform above chance.}
+  \label{tab:9events-results}
   \centering
   \begin{tabular}[b]{ccccccc}
     \toprule
@@ -843,12 +848,7 @@ into constituents may have a neural basis.
     7&41.66\%&78.29\%&56.94\%&35.24\%&80.90\%&71.35\%\\[0.4ex]
     chance&11.11\%&33.33\%&33.33\%&25.00\%&50.00\%&50.00\%\\\bottomrule
   \end{tabular}
-  \caption{Per-subject mean classification accuracies
-    averaged across fold for Experiment~2.
-    %
-    Note that all six analyses perform above chance.}
-  \label{fig:9events-results}
-\end{figure}
+\end{table*}
 
 \begin{landscape}
   \begin{figure}

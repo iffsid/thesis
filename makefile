@@ -19,5 +19,6 @@ thesis.pdf: thesis.tex thesis.bib
 	pdflatex thesis
 	pdflatex thesis
 	make clean
+	pdftk form-9.pdf thesis.pdf cat output siddharth-thesis.pdf
 
 .PHONY: clean

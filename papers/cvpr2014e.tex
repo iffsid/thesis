@@ -385,6 +385,17 @@ A companion submission describes a method by which one can automatically learn
 such HMMs for the lexicon, grammar, and corpus discussed in this paper.
 
 \begin{table*}[t]
+  \caption{(a) The grammar for our lexicon of 17 lexical entries (2 adjectives,
+    5 nouns, 2 spatial relations, 4 verbs, 2 adverbs, and 2 motion prepositions).
+    %
+    Note that the grammar allows for infinite recursion in the noun phrase.
+    %
+    (b) The theta grid, specifying the number of arguments and
+    roles such arguments refer to.
+    %
+    (c) A selection of sentences drawn from the grammar based on which we
+    collected multiple videos for our corpus.}
+  \label{tab-st1:language}
   \centering\ra{1.1}
   \begin{tabular}{@{}c@{\hspace{7pt}}c@{}}
     \begin{tabular}{@{}c@{}}
@@ -443,17 +454,6 @@ such HMMs for the lexicon, grammar, and corpus discussed in this paper.
     (c)
     \end{tabular}
   \end{tabular}
-  \caption{(a) The grammar for our lexicon of 17 lexical entries (2 adjectives,
-    5 nouns, 2 spatial relations, 4 verbs, 2 adverbs, and 2 motion prepositions).
-    %
-    Note that the grammar allows for infinite recursion in the noun phrase.
-    %
-    (b) The theta grid, specifying the number of arguments and
-    roles such arguments refer to.
-    %
-    (c) A selection of sentences drawn from the grammar based on which we
-    collected multiple videos for our corpus.}
-  \label{tab-st1:language}
 \end{table*}
 
 Nouns (\eg\ \emph{person}) may be represented by constructing static FSMs over
@@ -534,6 +534,9 @@ noise between each repetition.
 This allows for some flexibility in the models.
 
 \begin{table*}
+  \caption{The finite-state recognizers corresponding to the lexicon in
+    Table~\protect\ref{tab-st1:language}(a).}
+  \label{tab-st1:predicates}
   \centering
   \scalebox{0.65}{\begin{tabular}{@{}c@{}}
       \midrule Constants\\ \midrule \addlinespace[1ex]
@@ -730,9 +733,6 @@ This allows for some flexibility in the models.
         \end{array}
       \end{math}
     \end{tabular}}
-  \caption{The finite-state recognizers corresponding to the lexicon in
-    Table~\protect\ref{tab-st1:language}(a).}
-  \label{tab-st1:predicates}
 \end{table*}
 
 A sentence may describe an activity involving multiple tracks, where different
